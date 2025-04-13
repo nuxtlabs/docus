@@ -71,6 +71,7 @@ css({
   '.docs-prev-next': {
     display: 'flex',
     flexDirection: 'column',
+    flex-wrap: 1,
     justifyContent: 'space-between',
     gap: '{space.3}',
     '@sm': {
@@ -83,6 +84,7 @@ css({
       padding: '{space.3}',
       border: '1px solid {elements.border.primary.static}',
       borderRadius: '{radii.md}',
+      flex-grow: 1,
       '&:hover': {
         backgroundColor: '{color.gray.50}',
         borderColor: '{color.gray.50}',
