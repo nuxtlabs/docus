@@ -71,7 +71,7 @@ css({
   '.docs-prev-next': {
     display: 'flex',
     flexDirection: 'column',
-    flex-wrap: 1,
+    flex-wrap: wrap,
     justifyContent: 'space-between',
     gap: '{space.3}',
     '@sm': {
