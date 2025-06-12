@@ -8,6 +8,16 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/robots',
     'nuxt-og-image',
+    () => {
+      // Update @nuxt/content optimizeDeps options
+      extendViteConfig((config) => {
+        config.optimizeDeps ||= {}
+        config.optimizeDeps.include ||= []
+        config.optimizeDeps.include.push('@nuxt/content > slugify')
+        config.optimizeDeps.include = config.optimizeDeps.include
+          .map(id => id.replace(/^@nuxt\/content > /, 'docus > @nuxt/content > '))
+      })
+    }
   ],
   devtools: {
     enabled: dev,
