@@ -1,3 +1,5 @@
+import { extendViteConfig } from '@nuxt/kit'
+
 // Flag enabled when developing docs theme
 const dev = !!process.env.NUXT_DOCS_DEV
 
@@ -17,7 +19,7 @@ export default defineNuxtConfig({
         config.optimizeDeps.include = config.optimizeDeps.include
           .map(id => id.replace(/^@nuxt\/content > /, 'docus > @nuxt/content > '))
       })
-    }
+    },
   ],
   devtools: {
     enabled: dev,
