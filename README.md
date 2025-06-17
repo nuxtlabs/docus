@@ -1,5 +1,10 @@
 [![docus](https://docus-puce.vercel.app/__og-image__/static/og.png)](https://docus.dev)
 
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![License][license-src]][license-href]
+[![Nuxt][nuxt-src]][nuxt-href]
+
 # Docus
 
 Documentation Theme and CLI to write beautiful docs with Markdown.
@@ -31,3 +36,17 @@ Ship fast, flexible, and SEO-optimized documentation with beautiful design out o
 Published under the [MIT](https://github.com/unjs/undocs/blob/main/LICENSE) license.
 
 Docus v3 has been entirely rewritten from scratch and is inspired and copied from [undocs](https://github.com/unjs/undocs) made by [@pi0](https://github.com/pi0) 💚
+
+
+<!-- Badges -->
+[npm-version-src]: https://img.shields.io/npm/v/docus/latest.svg?style=flat&colorA=020420&colorB=EEEEEE
+[npm-version-href]: https://npmjs.com/package/docus
+
+[npm-downloads-src]: https://img.shields.io/npm/dm/docus.svg?style=flat&colorA=020420&colorB=EEEEEE
+[npm-downloads-href]: https://npm.chart.dev/docus
+
+[license-src]: https://img.shields.io/npm/l/docus.svg?style=flat&colorA=020420&colorB=EEEEEE
+[license-href]: https://npmjs.com/package/docus
+
+[nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
+[nuxt-href]: https://nuxt.com
