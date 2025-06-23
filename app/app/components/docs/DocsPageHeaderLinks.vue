@@ -36,45 +36,47 @@
 
 <script setup lang="ts">
 const route = useRoute()
+const toast = useToast()
 const copyStatus = ref<'idle' | 'copying' | 'copied'>('idle')
+
+const markdownLink = computed(() => `${window?.location?.origin}/raw${route.path}.md`)
 
 const items = [
   {
     label: 'Copy Markdown link',
     icon: 'i-lucide-link',
     onSelect() {
-      copyToClipboard(`${window.location.origin}/raw${route.path}.md`)
+      copyToClipboard(markdownLink.value)
+      toast.add({
+        title: 'Markdown link copied to clipboard',
+        icon: 'i-lucide-check-circle',
+        color: 'success',
+      })
     },
   },
   {
     label: 'View as Markdown',
     icon: 'i-simple-icons:markdown',
     target: '_blank',
-    onSelect() {
-      window.open(`${window.location.origin}/raw${route.path}.md`, '_blank')
-    },
+    to: markdownLink.value,
   },
   {
     label: 'Open in ChatGPT',
     icon: 'i-simple-icons:openai',
     target: '_blank',
-    onSelect() {
-      window.open(`https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${window.location.origin}/raw${route.path}.md so I can ask questions about it.`)}`, '_blank')
-    },
+    to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${markdownLink.value} so I can ask questions about it.`)}`,
   },
   {
     label: 'Open in Claude',
     icon: 'i-simple-icons:anthropic',
     target: '_blank',
-    onSelect() {
-      window.open(`https://claude.ai/new?q=${encodeURIComponent(`Read ${window.location.origin}/raw${route.path}.md so I can ask questions about it.`)}`, '_blank')
-    },
+    to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${markdownLink.value} so I can ask questions about it.`)}`,
   },
 ]
 
 async function copyPage() {
   copyStatus.value = 'copying'
-  const markdown = await $fetch<string>(`${window.location.origin}/raw${route.path}.md`)
+  const markdown = await $fetch<string>(markdownLink.value)
   copyToClipboard(markdown)
   copyStatus.value = 'copied'
   setTimeout(() => {
