@@ -31,7 +31,7 @@ Docus brings the best of the Nuxt ecosystem into one CLI.
   color: neutral
   icon: simple-icons-github
   size: xl
-  to: https://github.com/nuxt-ui-pro/docus
+  to: https://github.com/nuxtlabs/docus
   variant: outline
   ---
   Star on GitHub
