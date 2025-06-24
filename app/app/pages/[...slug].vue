@@ -2,7 +2,7 @@
 import type { ContentNavigationItem } from '@nuxt/content'
 import { kebabCase } from 'scule'
 import { addPrerenderPath } from '../utils/prerender'
-import { findPageHeadline } from '#ui-pro/utils/content'
+import { findPageHeadline } from '@nuxt/content/utils'
 
 definePageMeta({
   layout: 'docs',
@@ -38,7 +38,7 @@ useSeoMeta({
   ogDescription: description,
 })
 
-const headline = computed(() => findPageHeadline(navigation?.value, page.value))
+const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
 defineOgImageComponent('Docs', {
   headline: headline.value,
 })
