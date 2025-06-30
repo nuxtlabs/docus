@@ -60,7 +60,7 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^1.4.1",
     "@release-it/conventional-changelog": "^10.0.1",
-    "@stylistic/eslint-plugin": "^4.4.1",
+    "@stylistic/eslint-plugin": "^5.1.0",
     "@types/node": "^24.0.3",
     "@typescript-eslint/parser": "^8.34.1",
     "changelogen": "^0.6.1",
