@@ -36,7 +36,7 @@
     "@iconify-json/vscode-icons": "^1.2.23",
     "@nuxt/content": "^3.6.1",
     "@nuxt/image": "^1.10.0",
-    "@nuxt/kit": "^3.17.5",
+    "@nuxt/kit": "^3.17.6",
     "@nuxt/ui-pro": "^3.2.0",
     "@nuxtjs/mdc": "^0.17.0",
     "@nuxtjs/robots": "^5.3.0",
