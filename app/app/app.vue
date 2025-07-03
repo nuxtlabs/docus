@@ -2,12 +2,12 @@
 const { seo } = useAppConfig()
 const site = useSiteConfig()
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
-  transform: data => data.find(item => item.path === '/docs')?.children || data || [],
-})
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-  server: false,
-})
+// const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
+//   transform: data => data.find(item => item.path === '/docs')?.children || data || [],
+// })
+// const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
+//   server: false,
+// })
 
 useHead({
   meta: [
@@ -29,7 +29,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
-provide('navigation', navigation)
+// provide('navigation', navigation)
 </script>
 
 <template>
@@ -47,10 +47,10 @@ provide('navigation', navigation)
     <AppFooter />
 
     <ClientOnly>
-      <LazyUContentSearch
+      <!-- <LazyUContentSearch
         :files="files"
         :navigation="navigation"
-      />
+      /> -->
     </ClientOnly>
   </UApp>
 </template>

@@ -14,7 +14,6 @@ export default defineNuxtModule({
     const gitInfo = await getLocalGitInfo(dir) || getGitEnv()
     const siteName = nuxt.options?.site?.name || meta.name || gitInfo?.name || ''
 
-    // @ts-expect-error llms is not defined in the schema
     nuxt.options.llms = defu(nuxt.options.llms, {
       domain: url,
       title: siteName,
@@ -48,5 +47,10 @@ export default defineNuxtModule({
       },
       toc: {},
     })
+
+    console.log('i18n', nuxt.options.i18n)
+    if (nuxt.options.i18n) {
+      nuxt.options.runtimeConfig.public.i18n 
+    }
   },
 })
