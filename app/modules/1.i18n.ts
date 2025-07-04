@@ -11,8 +11,6 @@ export default defineNuxtModule({
 
     const { locales } = nuxt.options.i18n
 
-    console.log('locales', locales)
-
     if (locales && Array.isArray(locales) && locales.length) {
       // @ts-expect-error __LOCALES__ is a docus specific variable
       globalThis.__LOCALES__ = locales

@@ -1,21 +1,25 @@
 <script setup lang="ts">
 import { kebabCase } from 'scule'
-import type { ContentNavigationItem } from '@nuxt/content'
-import { findPageHeadline } from '@nuxt/content/utils'
-import { addPrerenderPath } from '../utils/prerender'
+import type { ContentNavigationItem, Collections, DocsCollectionItem } from '@nuxt/content'
+// import { findPageHeadline } from '@nuxt/content/utils'
+import { withLeadingSlash, joinURL } from 'ufo'
+import { addPrerenderPath } from '~/utils/prerender'
 
 definePageMeta({
   layout: 'docs',
 })
 
 const route = useRoute()
+const { locale, isEnabled } = useDocusI18n()
 const appConfig = useAppConfig()
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
+// const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
+
+const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
 const [{ data: page }, { data: surround }] = await Promise.all([
-  useAsyncData(kebabCase(route.path), () => queryCollection('docs').path(route.path).first()),
+  useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections).path(route.path).first()),
   useAsyncData(`${kebabCase(route.path)}-surround`, () => {
-    return queryCollectionItemSurroundings('docs', route.path, {
+    return queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, {
       fields: ['description'],
     })
   }),
@@ -38,10 +42,10 @@ useSeoMeta({
   ogDescription: description,
 })
 
-const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
-defineOgImageComponent('Docs', {
-  headline: headline.value,
-})
+// const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
+// defineOgImageComponent('Docs', {
+//   headline: headline.value,
+// })
 
 const editLink = computed(() => {
   if (!appConfig.github) {
@@ -61,17 +65,17 @@ const editLink = computed(() => {
 
 <template>
   <UPage v-if="page">
+    <!-- :headline="headline" -->
     <UPageHeader
       :title="page.title"
       :description="page.description"
-      :headline="headline"
       :ui="{
         wrapper: 'flex-row items-center flex-wrap justify-between',
       }"
     >
       <template #links>
         <UButton
-          v-for="(link, index) in page.links"
+          v-for="(link, index) in (page as DocsCollectionItem).links"
           :key="index"
           size="sm"
           v-bind="link"

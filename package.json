@@ -40,6 +40,7 @@
     "@nuxt/ui-pro": "^3.2.0",
     "@nuxtjs/mdc": "^0.17.0",
     "@nuxtjs/robots": "^5.3.0",
+    "@vueuse/core": "^13.5.0",
     "c12": "^3.0.4",
     "citty": "^0.1.6",
     "defu": "^6.1.4",

@@ -17,16 +17,6 @@ if (globalThis.__LOCALES__ && Array.isArray(globalThis.__LOCALES__)) {
   // @ts-expect-error __LOCALES__ is not defined
   for (const locale of globalThis.__LOCALES__) {
     const code = typeof locale === 'string' ? locale : locale.code
-    collections[`docs_${code}`] = defineCollection({
-      type: 'page',
-      source: {
-        // @ts-expect-error __DOCS_DIR__ is not defined
-        cwd: globalThis.__DOCS_DIR__,
-        include: `${code}/**/*.md`,
-        prefix: `/${code}`,
-      },
-      schema: createDocsSchema(),
-    })
 
     collections[`landing_${code}`] = defineCollection({
       type: 'page',
@@ -34,8 +24,20 @@ if (globalThis.__LOCALES__ && Array.isArray(globalThis.__LOCALES__)) {
         // @ts-expect-error __DOCS_DIR__ is not defined
         cwd: globalThis.__DOCS_DIR__,
         include: `${code}/index.md`,
-        prefix: `/${code}`,
+        // prefix: `/${code}`,
       },
+    })
+
+    collections[`docs_${code}`] = defineCollection({
+      type: 'page',
+      source: {
+        // @ts-expect-error __DOCS_DIR__ is not defined
+        cwd: globalThis.__DOCS_DIR__,
+        include: `${code}/**/*.md`,
+        prefix: `/${code}`,
+        exclude: [`${code}/index.md`],
+      },
+      schema: createDocsSchema(),
     })
   }
 }

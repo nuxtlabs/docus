@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { useDocusI18n } from '~/composables/useDocusI18n'
+
 const appConfig = useAppConfig()
 const site = useSiteConfig()
+
+const { localePath } = useDocusI18n()
 
 const links = computed(() => appConfig.github?.url
   ? [
@@ -17,7 +21,7 @@ const links = computed(() => appConfig.github?.url
 <template>
   <UHeader
     :ui="{ center: 'flex-1' }"
-    to="/"
+    :to="localePath('/')"
     :title="appConfig.header?.title || site.name"
   >
     <AppHeaderCenter />
@@ -40,6 +44,8 @@ const links = computed(() => appConfig.github?.url
           v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
         />
       </template>
+
+      <LanguageSelect />
     </template>
 
     <template #toggle="{ open, toggle }">

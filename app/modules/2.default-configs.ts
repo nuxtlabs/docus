@@ -48,9 +48,13 @@ export default defineNuxtModule({
       toc: {},
     })
 
-    console.log('i18n', nuxt.options.i18n)
     if (nuxt.options.i18n) {
-      nuxt.options.runtimeConfig.public.i18n 
+      nuxt.options.i18n = defu(nuxt.options.i18n, {
+        detectBrowserLanguage: {
+          redirectOn: 'root',
+        },
+        strategy: 'prefix',
+      })
     }
   },
 })
