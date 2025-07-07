@@ -1,6 +1,4 @@
 import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
-import stylistic from '@stylistic/eslint-plugin'
-import parserTs from '@typescript-eslint/parser'
 
 export default createConfigForNuxt({
   dirs: {
@@ -16,12 +14,6 @@ export default createConfigForNuxt({
   files: [
     'cli/**/*.ts',
   ],
-  plugins: {
-    '@stylistic': stylistic,
-  },
-  languageOptions: {
-    parser: parserTs,
-  },
 }).append(
   {
     rules: {

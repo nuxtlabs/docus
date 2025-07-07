@@ -12,7 +12,7 @@ if (!page.value) {
 }
 
 // Reconsider it once this is implemented: https://github.com/nuxt/content/issues/3419
-const prose = page.value!.meta.prose
+const prose = page.value.meta.prose as boolean
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
 

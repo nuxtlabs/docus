@@ -8,9 +8,7 @@ const isHovering = ref(false)
 const isTouchDevice = ref(false)
 let cleanup: (() => void) | undefined
 
-const color = computed(() => {
-  return props.white ? 'text-white' : 'text-black dark:text-white'
-})
+const color = computed(() => props.white ? 'text-white' : 'text-black dark:text-white')
 
 function setupBlinking() {
   const blinkDelay = Math.random() * 5000 + 2000

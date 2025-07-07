@@ -7,6 +7,6 @@
   "dependencies": {
     "docus": "latest",
     "better-sqlite3": "^11.10.0",
-    "nuxt": "^3.17.5"
+    "nuxt": "^3.17.6"
   }
 }

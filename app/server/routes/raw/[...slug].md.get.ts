@@ -1,5 +1,6 @@
-import { stringify } from 'minimark/stringify'
 import { withLeadingSlash } from 'ufo'
+import { stringify } from 'minimark/stringify'
+import { queryCollection } from '@nuxt/content/nitro'
 
 export default eventHandler(async (event) => {
   const slug = getRouterParams(event)['slug.md']
