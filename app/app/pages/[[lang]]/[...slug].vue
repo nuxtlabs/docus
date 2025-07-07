@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { kebabCase } from 'scule'
 import type { ContentNavigationItem, Collections, DocsCollectionItem } from '@nuxt/content'
-// import { findPageHeadline } from '@nuxt/content/utils'
-import { withLeadingSlash, joinURL } from 'ufo'
+import { findPageHeadline } from '@nuxt/content/utils'
 import { addPrerenderPath } from '~/utils/prerender'
 
 definePageMeta({
@@ -12,7 +11,7 @@ definePageMeta({
 const route = useRoute()
 const { locale, isEnabled } = useDocusI18n()
 const appConfig = useAppConfig()
-// const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
+const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
@@ -42,10 +41,10 @@ useSeoMeta({
   ogDescription: description,
 })
 
-// const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
-// defineOgImageComponent('Docs', {
-//   headline: headline.value,
-// })
+const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
+defineOgImageComponent('Docs', {
+  headline: headline.value,
+})
 
 const editLink = computed(() => {
   if (!appConfig.github) {
@@ -65,10 +64,10 @@ const editLink = computed(() => {
 
 <template>
   <UPage v-if="page">
-    <!-- :headline="headline" -->
     <UPageHeader
       :title="page.title"
       :description="page.description"
+      :headline="headline"
       :ui="{
         wrapper: 'flex-row items-center flex-wrap justify-between',
       }"

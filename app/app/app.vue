@@ -1,10 +1,21 @@
 <script setup lang="ts">
+import type { PageCollections } from '@nuxt/content'
+
 const { seo } = useAppConfig()
 const site = useSiteConfig()
 
-// const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
-//   transform: data => data.find(item => item.path === '/docs')?.children || data || [],
-// })
+const { locale, isEnabled } = useDocusI18n()
+
+const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
+
+const { data: navigation } = await useAsyncData(`navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
+  transform: (data) => {
+    const rootResult = data.find(item => item.path === '/docs')?.children || data || []
+
+    return rootResult.find(item => item.path === `/${locale.value}`)?.children || rootResult
+  },
+  watch: [locale],
+})
 // const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
 //   server: false,
 // })
@@ -29,7 +40,7 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
-// provide('navigation', navigation)
+provide('navigation', navigation)
 </script>
 
 <template>

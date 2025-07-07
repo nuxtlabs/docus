@@ -9,10 +9,6 @@ const localeItems = computed(() => {
     value: locale.code,
   }))
 })
-
-// watch(current, (newLocale) => {
-//   setLocaleCookie(newLocale)
-// })
 </script>
 
 <template>
@@ -21,7 +17,7 @@ const localeItems = computed(() => {
       v-model="value"
       class="w-32"
       :items="localeItems"
-      @update:model-value="switchLocalePath"
+      @update:model-value="navigateTo(switchLocalePath(value))"
     />
     <template #fallback>
       <div class="h-2 w-5" />

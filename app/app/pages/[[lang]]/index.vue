@@ -2,7 +2,7 @@
 import type { Collections } from '@nuxt/content'
 
 const route = useRoute()
-const { locale, isEnabled, localePath } = useDocusI18n()
+const { locale, isEnabled } = useDocusI18n()
 
 const collectionName = computed(() => isEnabled.value ? `landing_${locale.value}` : 'landing')
 

@@ -4,7 +4,7 @@ import { useDocusI18n } from '~/composables/useDocusI18n'
 const appConfig = useAppConfig()
 const site = useSiteConfig()
 
-const { localePath } = useDocusI18n()
+const { localePath, isEnabled } = useDocusI18n()
 
 const links = computed(() => appConfig.github?.url
   ? [
@@ -45,7 +45,7 @@ const links = computed(() => appConfig.github?.url
         />
       </template>
 
-      <LanguageSelect />
+      <LanguageSelect v-if="isEnabled" />
     </template>
 
     <template #toggle="{ open, toggle }">
