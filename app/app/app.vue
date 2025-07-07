@@ -16,9 +16,9 @@ const { data: navigation } = await useAsyncData(`navigation_${collectionName.val
   },
   watch: [locale],
 })
-// const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-//   server: false,
-// })
+const { data: files } = useLazyAsyncData(`search_${collectionName.value}`, () => queryCollectionSearchSections(collectionName.value as keyof PageCollections), {
+  server: false,
+})
 
 useHead({
   meta: [
@@ -58,10 +58,10 @@ provide('navigation', navigation)
     <AppFooter />
 
     <ClientOnly>
-      <!-- <LazyUContentSearch
+      <LazyUContentSearch
         :files="files"
         :navigation="navigation"
-      /> -->
+      />
     </ClientOnly>
   </UApp>
 </template>
