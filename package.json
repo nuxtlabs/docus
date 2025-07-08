@@ -29,7 +29,7 @@
     "test": "echo \"Error: no test specified\"",
     "lint": "eslint .",
     "typecheck": "nuxi typecheck app",
-    "release": "npm run lint && npm run test && npm run build && release-it"
+    "release": "npm run lint && npm run test && npm run build && npm run typecheck && release-it"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.56",

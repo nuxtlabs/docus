@@ -35,7 +35,13 @@ const links = computed(() => appConfig.github?.url
 
       <UContentSearchButton class="lg:hidden" />
 
-      <UColorModeButton />
+      <ClientOnly>
+        <UColorModeButton />
+
+        <template #fallback>
+          <div class="h-8 w-8 animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded-md" />
+        </template>
+      </ClientOnly>
 
       <template v-if="links?.length">
         <UButton
@@ -45,7 +51,13 @@ const links = computed(() => appConfig.github?.url
         />
       </template>
 
-      <LanguageSelect v-if="isEnabled" />
+      <ClientOnly>
+        <LanguageSelect v-if="isEnabled" />
+
+        <template #fallback>
+          <div class="h-8 w-32 animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded-md" />
+        </template>
+      </ClientOnly>
     </template>
 
     <template #toggle="{ open, toggle }">
