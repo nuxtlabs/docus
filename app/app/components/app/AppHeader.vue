@@ -4,7 +4,7 @@ import { useDocusI18n } from '~/composables/useDocusI18n'
 const appConfig = useAppConfig()
 const site = useSiteConfig()
 
-const { localePath, isEnabled } = useDocusI18n()
+const { locale, locales, localePath, isEnabled, switchLocalePath } = useDocusI18n()
 
 const links = computed(() => appConfig.github?.url
   ? [
@@ -52,7 +52,12 @@ const links = computed(() => appConfig.github?.url
       </template>
 
       <ClientOnly>
-        <LanguageSelect v-if="isEnabled" />
+        <ULocaleSelect
+          v-if="isEnabled"
+          v-model="locale"
+          :locales="locales"
+          @update:model-value="navigateTo(switchLocalePath($event) || localePath('/'))"
+        />
 
         <template #fallback>
           <div class="h-8 w-32 animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded-md" />
