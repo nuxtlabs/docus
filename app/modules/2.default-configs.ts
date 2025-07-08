@@ -50,10 +50,6 @@ export default defineNuxtModule({
 
     if (nuxt.options.i18n) {
       nuxt.options.i18n = defu(nuxt.options.i18n, {
-        detectBrowserLanguage: {
-          useCookie: false,
-          redirectOn: 'root',
-        },
         strategy: 'prefix',
       })
     }

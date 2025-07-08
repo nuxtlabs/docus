@@ -1,6 +1,4 @@
-import { createSharedComposable } from '@vueuse/core'
-
-export const useDocusI18n = createSharedComposable(() => {
+export const useDocusI18n = () => {
   const config = useRuntimeConfig().public
   const isEnabled = ref(!!config.i18n)
 
@@ -23,4 +21,4 @@ export const useDocusI18n = createSharedComposable(() => {
     locales,
     switchLocalePath: useSwitchLocalePath(),
   }
-})
+}
