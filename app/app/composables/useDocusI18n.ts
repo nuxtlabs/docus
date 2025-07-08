@@ -9,7 +9,7 @@ export const useDocusI18n = createSharedComposable(() => {
       isEnabled,
       localePath: (path: string) => path,
       switchLocalePath: () => {},
-      locale: ref(''),
+      locale: ref('en'),
       locales: ref([]),
     }
   }

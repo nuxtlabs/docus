@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import type { PageCollections } from '@nuxt/content'
+import * as locales from '@nuxt/ui-pro/locale'
 
 const { seo } = useAppConfig()
 const site = useSiteConfig()
 
 const { locale, isEnabled } = useDocusI18n()
 
+const lang = computed(() => locales[locale.value as keyof typeof locales]?.code || 'en')
+const dir = computed(() => locales[locale.value as keyof typeof locales]?.dir || 'ltr')
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
 const { data: navigation } = await useAsyncData(`navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
@@ -28,7 +31,8 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' },
   ],
   htmlAttrs: {
-    lang: 'en',
+    lang,
+    dir,
   },
 })
 
@@ -44,7 +48,7 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <UApp>
+  <UApp :locale="locales[locale as keyof typeof locales]">
     <NuxtLoadingIndicator color="var(--ui-primary)" />
 
     <AppHeader />
