@@ -10,7 +10,7 @@ const appConfig = useAppConfig()
     <USeparator type="dashed" />
 
     <UPageLinks
-      :title="appConfig.toc?.bottom?.title || 'Links'"
+      :title="appConfig.toc?.bottom?.title || $t('docs.links')"
       :links="appConfig.toc?.bottom?.links"
     />
   </div>

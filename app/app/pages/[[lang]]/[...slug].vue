@@ -103,9 +103,9 @@ const editLink = computed(() => {
             icon="i-lucide-pen"
             :ui="{ leadingIcon: 'size-4' }"
           >
-            Edit this page
+            {{ $t('docs.edit') }}
           </UButton>
-          or
+          <span>{{ $t('common.or') }}</span>
           <UButton
             variant="link"
             color="neutral"
@@ -114,7 +114,7 @@ const editLink = computed(() => {
             icon="i-lucide-alert-circle"
             :ui="{ leadingIcon: 'size-4' }"
           >
-            Report an issue
+            {{ $t('docs.report') }}
           </UButton>
         </div>
       </USeparator>
@@ -127,7 +127,7 @@ const editLink = computed(() => {
     >
       <UContentToc
         highlight
-        :title="appConfig.toc?.title || 'Table of Contents'"
+        :title="appConfig.toc?.title || $t('docs.toc')"
         :links="page.body?.toc?.links"
       >
         <template #bottom>

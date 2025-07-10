@@ -1,3 +1,18 @@
 {
-  "copy": "Copier la page"
-}
+  "common": {
+    "or": "ou"
+  },
+  "docs": {
+    "copy": {
+      "page": "Copier la page",
+      "link": "Copier la page Markdown",
+      "view": "Voir en Markdown",
+      "gpt": "Ouvrir dans ChatGPT",
+      "claude": "Ouvrir dans Claude"
+    },
+    "links": "Communauté",
+    "toc": "Sur cette page",
+    "report": "Signaler un problème",
+    "edit": "Éditer cette page"
+  }
+} 

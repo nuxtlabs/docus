@@ -9,7 +9,6 @@ export default defineAppConfig({
   },
   toc: {
     bottom: {
-      title: 'Community',
       links: [{
         icon: 'i-lucide-book-open',
         label: 'Nuxt UI Pro docs',

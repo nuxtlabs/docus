@@ -4,6 +4,7 @@ import { useClipboard } from '@vueuse/core'
 const route = useRoute()
 const toast = useToast()
 const { copy, copied } = useClipboard()
+const { t } = useDocusI18n()
 
 const markdownLink = computed(() => `${window?.location?.origin}/raw${route.path}.md`)
 
@@ -15,26 +16,26 @@ const items = [
       copy(markdownLink.value)
 
       toast.add({
-        title: 'Markdown link copied to clipboard',
+        title: t('docs.copy.link'),
         icon: 'i-lucide-check-circle',
         color: 'success',
       })
     },
   },
   {
-    label: 'View as Markdown',
+    label: t('docs.copy.view'),
     icon: 'i-simple-icons:markdown',
     target: '_blank',
     to: markdownLink.value,
   },
   {
-    label: 'Open in ChatGPT',
+    label: t('docs.copy.gpt'),
     icon: 'i-simple-icons:openai',
     target: '_blank',
     to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${markdownLink.value} so I can ask questions about it.`)}`,
   },
   {
-    label: 'Open in Claude',
+    label: t('docs.copy.claude'),
     icon: 'i-simple-icons:anthropic',
     target: '_blank',
     to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${markdownLink.value} so I can ask questions about it.`)}`,
@@ -45,7 +46,7 @@ const items = [
 <template>
   <UButtonGroup size="sm">
     <UButton
-      :label="$t('copy')"
+      :label="$t('docs.copy.page')"
       :icon="copied ? 'i-lucide-copy-check' : 'i-lucide-copy'"
       color="neutral"
       variant="outline"
