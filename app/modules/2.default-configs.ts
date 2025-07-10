@@ -2,6 +2,7 @@ import { defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
 import { inferSiteURL, getPackageJsonMetadata } from '../app/utils/meta'
 import { getGitBranch, getGitEnv, getLocalGitInfo } from '../app/utils/git'
+import type { Strategies } from '@nuxtjs/i18n'
 
 export default defineNuxtModule({
   meta: {
@@ -48,10 +49,15 @@ export default defineNuxtModule({
       toc: {},
     })
 
-    if (nuxt.options.i18n) {
-      nuxt.options.i18n = defu(nuxt.options.i18n, {
-        strategy: 'prefix',
-      })
+    /*
+    ** I18N
+    */
+    if (nuxt.options.i18n && nuxt.options.i18n.locales) {
+      // Override strategy to prefix
+      nuxt.options.i18n = {
+        ...nuxt.options.i18n,
+        strategy: 'prefix' as Strategies,
+      }
     }
   },
 })

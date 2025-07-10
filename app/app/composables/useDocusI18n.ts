@@ -5,10 +5,10 @@ export const useDocusI18n = () => {
   if (!isEnabled.value) {
     return {
       isEnabled,
-      localePath: (path: string) => path,
-      switchLocalePath: () => {},
       locale: ref('en'),
       locales: ref([]),
+      localePath: (path: string) => path,
+      switchLocalePath: () => {},
     }
   }
 
@@ -16,9 +16,9 @@ export const useDocusI18n = () => {
 
   return {
     isEnabled,
-    localePath: useLocalePath(),
     locale,
     locales,
+    localePath: useLocalePath(),
     switchLocalePath: useSwitchLocalePath(),
   }
 }

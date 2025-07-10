@@ -21,6 +21,36 @@ export default defineNuxtConfig({
           .map(id => id.replace(/^@nuxt\/content > /, 'docus > @nuxt/content > '))
       })
     },
+    // (_config, nuxt) => {
+    //   if (!nuxt.options.i18n || !nuxt.options.i18n.locales || nuxt.options.i18n.locales.length === 0) {
+    //     return
+    //   }
+
+    //   const locales = nuxt.options.i18n.locales.map((locale) => {
+    //     if (typeof locale === 'string') {
+    //       return {
+    //         code: locale,
+    //         name: locale,
+    //         file: `${locale}.json`,
+    //       }
+    //     }
+    //     return {
+    //       code: locale.code,
+    //       name: locale.name,
+    //       file: `${locale.code}.json`,
+    //     }
+    //   })
+    //   console.log('locales', locales)
+
+    //   const { resolve } = createResolver(import.meta.url)
+    //   nuxt.hook('i18n:registerModule', (register) => {
+    //     console.log('i18n:registerModule')
+    //     register({
+    //       langDir: resolve('./i18n/locales'),
+    //       locales,
+    //     })
+    //   })
+    // },
   ],
   devtools: {
     enabled: dev,
