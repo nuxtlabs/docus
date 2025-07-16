@@ -1,5 +1,6 @@
+import en from '../../i18n/locales/en.json'
 
-export const useDocusI18n = async () => {
+export const useDocusI18n = () => {
   const config = useRuntimeConfig().public
   const isEnabled = ref(!!config.i18n)
 
@@ -10,7 +11,10 @@ export const useDocusI18n = async () => {
       locales: ref([]),
       localePath: (path: string) => path,
       switchLocalePath: () => {},
-      t: () => '',
+      t: (key: string) => {
+        const path = key.split('.')
+        return path.reduce((acc: unknown, curr) => (acc as Record<string, unknown>)?.[curr], en)
+      },
     }
   }
 

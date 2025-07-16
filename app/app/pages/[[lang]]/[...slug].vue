@@ -9,7 +9,7 @@ definePageMeta({
 })
 
 const route = useRoute()
-const { locale, isEnabled } = useDocusI18n()
+const { locale, isEnabled, t } = useDocusI18n()
 const appConfig = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
@@ -103,9 +103,9 @@ const editLink = computed(() => {
             icon="i-lucide-pen"
             :ui="{ leadingIcon: 'size-4' }"
           >
-            {{ $t('docs.edit') }}
+            {{ t('docs.edit') }}
           </UButton>
-          <span>{{ $t('common.or') }}</span>
+          <span>{{ t('common.or') }}</span>
           <UButton
             variant="link"
             color="neutral"
@@ -114,7 +114,7 @@ const editLink = computed(() => {
             icon="i-lucide-alert-circle"
             :ui="{ leadingIcon: 'size-4' }"
           >
-            {{ $t('docs.report') }}
+            {{ t('docs.report') }}
           </UButton>
         </div>
       </USeparator>
@@ -127,7 +127,7 @@ const editLink = computed(() => {
     >
       <UContentToc
         highlight
-        :title="appConfig.toc?.title || $t('docs.toc')"
+        :title="appConfig.toc?.title || t('docs.toc')"
         :links="page.body?.toc?.links"
       >
         <template #bottom>

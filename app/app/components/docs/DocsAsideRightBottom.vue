@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const appConfig = useAppConfig()
+const { t } = useDocusI18n()
 </script>
 
 <template>
@@ -10,7 +11,7 @@ const appConfig = useAppConfig()
     <USeparator type="dashed" />
 
     <UPageLinks
-      :title="appConfig.toc?.bottom?.title || $t('docs.links')"
+      :title="appConfig.toc?.bottom?.title || t('docs.links')"
       :links="appConfig.toc?.bottom?.links"
     />
   </div>

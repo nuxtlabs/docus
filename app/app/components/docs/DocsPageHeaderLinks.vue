@@ -46,7 +46,7 @@ const items = [
 <template>
   <UButtonGroup size="sm">
     <UButton
-      :label="$t('docs.copy.page')"
+      :label="t('docs.copy.page')"
       :icon="copied ? 'i-lucide-copy-check' : 'i-lucide-copy'"
       color="neutral"
       variant="outline"
