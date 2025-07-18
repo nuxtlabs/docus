@@ -35,6 +35,8 @@ export function createCLI(opts: CLIOptions) {
     },
     args: { ...sharedArgs },
     async setup({ args }) {
+      console.warn('\n⚠️  The `docus dev` command is deprecated. Please use `nuxt dev [your doc folder] --extends github:nuxtlabs/docus/layer` instead.\n')
+
       const dir = resolve(args.dir as string)
       const nuxtConfig = await getNuxtConfig(dir, {
         ...opts.setup,
@@ -53,6 +55,8 @@ export function createCLI(opts: CLIOptions) {
     },
     args: { ...sharedArgs },
     async setup({ args }) {
+      console.warn('\n⚠️  The `docus prepare` command is deprecated. Please use `nuxt prepare [your doc folder] --extends github:nuxtlabs/docus/layer` instead.\n')
+
       const dir = resolve(args.dir as string)
       const nuxtConfig = await getNuxtConfig(dir, opts.setup)
 
@@ -68,6 +72,8 @@ export function createCLI(opts: CLIOptions) {
     },
     args: { ...sharedArgs },
     async setup({ args }) {
+      console.warn('\n⚠️  The `docus build` command is deprecated. Please use `nuxt build [your doc folder] --extends github:nuxtlabs/docus/layer` instead.\n')
+
       const dir = resolve(args.dir as string)
       const nuxtConfig = await getNuxtConfig(dir, opts.setup)
 

@@ -13,22 +13,22 @@
     "docus": "./dist/main.mjs"
   },
   "files": [
-    "app",
+    "layer",
     "dist",
-    "!app/**/node_modules",
-    "!app/**/.nuxt",
-    "!app/**/tsconfig.json"
+    "!layer/**/node_modules",
+    "!layer/**/.nuxt",
+    "!layer/**/tsconfig.json"
   ],
   "scripts": {
     "dev": "npm run docs:dev",
-    "docs:dev": "NUXT_DOCS_DEV=1 npm run docus dev docs",
-    "docs:build": "npm run docus build docs",
-    "dev:prepare": "nuxi prepare app && npm run docus prepare docs",
+    "docs:dev": "NUXT_DOCS_DEV=1 nuxt dev docs --extends ../layer",
+    "docs:build": "nuxt build docs --extends ../layer",
+    "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "build": "tsup-node ./cli/main.ts --format esm",
     "docus": "tsx ./cli/main.ts",
     "test": "echo \"Error: no test specified\"",
     "lint": "eslint .",
-    "typecheck": "nuxi typecheck app",
+    "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer",
     "release": "npm run lint && npm run test && npm run build && release-it"
   },
   "dependencies": {
