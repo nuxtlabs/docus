@@ -1,7 +1,7 @@
 import { defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
-import { inferSiteURL, getPackageJsonMetadata } from '../app/utils/meta'
-import { getGitBranch, getGitEnv, getLocalGitInfo } from '../app/utils/git'
+import { inferSiteURL, getPackageJsonMetadata } from '../utils/meta'
+import { getGitBranch, getGitEnv, getLocalGitInfo } from '../utils/git'
 
 export default defineNuxtModule({
   meta: {

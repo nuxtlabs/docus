@@ -3,8 +3,8 @@
   "description": "Official documentation for Docus, also used as playground.",
   "type": "module",
   "scripts": {
-    "build": "docus build",
-    "dev": "docus dev"
+    "build": "nuxt build --extends github:nuxtlabs/docus/layer",
+    "dev": "nuxt dev --extends github:nuxtlabs/docus/layer"
   },
   "dependencies": {
     "@nuxtjs/plausible": "^1.2.0"

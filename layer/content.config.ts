@@ -1,20 +1,23 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { useNuxt } from '@nuxt/kit'
+import { joinURL } from 'ufo'
+
+const { options } = useNuxt()
+const cwd = joinURL(options.rootDir, 'content')
 
 export default defineContentConfig({
   collections: {
     landing: defineCollection({
       type: 'page',
       source: {
-        // @ts-expect-error __DOCS_DIR__ is not defined
-        cwd: globalThis.__DOCS_DIR__,
+        cwd,
         include: 'index.md',
       },
     }),
     docs: defineCollection({
       type: 'page',
       source: {
-        // @ts-expect-error __DOCS_DIR__ is not defined
-        cwd: globalThis.__DOCS_DIR__,
+        cwd,
         include: '**',
         exclude: ['index.md'],
       },
