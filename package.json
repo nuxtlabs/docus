@@ -1,23 +1,19 @@
 {
-  "name": "docus",
+  "name": "@larbish/docus",
   "description": "Minimal Documentation theme and CLI for shared usage across Nuxt modules",
   "repository": {
     "type": "git",
     "url": "https://github.com/nuxtlabs/docus"
   },
   "private": false,
-  "version": "3.0.5",
+  "version": "3.0.7",
   "keywords": [],
   "license": "MIT",
   "bin": {
     "docus": "./dist/main.mjs"
   },
   "files": [
-    "layer",
-    "dist",
-    "!layer/**/node_modules",
-    "!layer/**/.nuxt",
-    "!layer/**/tsconfig.json"
+    "dist"
   ],
   "scripts": {
     "dev": "npm run docs:dev",
@@ -29,32 +25,22 @@
     "test": "echo \"Error: no test specified\"",
     "lint": "eslint .",
     "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer",
-    "release": "npm run lint && npm run test && npm run build && release-it"
+    "release": "npm run lint && npm run test && npm run build && release-it",
+    "publish:layer": "cd layer && npm publish --access public",
+    "publish:cli": "npm run build && npm publish --access public",
+    "publish:all": "npm run publish:layer && npm run publish:cli"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.57",
-    "@iconify-json/simple-icons": "^1.2.43",
-    "@iconify-json/vscode-icons": "^1.2.23",
-    "@nuxt/content": "^3.6.3",
-    "@nuxt/image": "^1.10.0",
     "@nuxt/kit": "^4.0.0",
-    "@nuxt/ui-pro": "^3.2.0",
-    "@nuxtjs/mdc": "^0.17.1",
-    "@nuxtjs/robots": "^5.4.0",
-    "@vueuse/core": "^13.5.0",
     "c12": "^3.1.0",
     "citty": "^0.1.6",
     "defu": "^6.1.4",
     "dotenv": "^17.2.0",
     "git-url-parse": "^16.1.0",
     "minimark": "^0.2.0",
-    "motion-v": "^1.5.0",
     "nuxi": "^3.26.2",
-    "nuxt-llms": "^0.1.3",
-    "nuxt-og-image": "^5.1.9",
     "pkg-types": "^2.2.0",
     "scule": "^1.3.0",
-    "tailwindcss": "^4.1.11",
     "ufo": "^1.6.1",
     "unctx": "^2.4.1",
     "unist-util-visit": "^5.0.0"

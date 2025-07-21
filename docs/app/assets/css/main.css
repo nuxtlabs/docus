@@ -1,6 +1,3 @@
-@import "tailwindcss";
-@import "@nuxt/ui-pro";
-
 @source "../../../content/**/*";
 @source "../../../../app/app/app.config.ts";
 
