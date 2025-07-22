@@ -6,7 +6,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/create-docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npm.chart.dev/create-docus)
 [![License](https://img.shields.io/npm/l/create-docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/create-docus)
 
-The fastest way to create a new [Docus](https://docus.dev) documentation project. This CLI tool scaffolds a complete documentation website using the [`docus`](https://www.npmjs.com/package/docus) Nuxt layer.
+The fastest way to create a new [Docus](https://docus.dev) documentation project. This CLI tool scaffolds a complete documentation website using the [`docus`](https://www.github.com/nuxtlabs/docus/tree/main/layer) Nuxt layer.
 
 ## 🚀 Quick Start
 
@@ -114,7 +114,7 @@ This is a monorepo containing:
 - **`/`** - CLI tool (`create-docus`)
 - **`/layer`** - Docus Nuxt layer (`docus`)
 - **`/docs`** - Documentation and examples
-- **`/.starter` ** - Starter project
+- **`/.starters` ** - Starters project (`i18n` version coming soon)
 
 ## 📄 License
 

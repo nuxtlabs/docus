@@ -33,7 +33,7 @@ The easiest way to get started is using the Docus CLI, which automatically sets 
 
 ```bash
 # Create a new documentation project
-npx create-docus my-docs
+npx create docus my-docs
 
 # Navigate to your project
 cd my-docs
@@ -46,7 +46,7 @@ This creates a complete documentation project pre-configured with `docus`.
 
 ### Option 2: Manual Setup
 
-#### Option 2a: Nuxt Config
+#### Option 2a: Nuxt Config (recommended)
 
 Add the layer to your `nuxt.config.ts`:
 
@@ -56,7 +56,7 @@ export default defineNuxtConfig({
 })
 ```
 
-#### Option 2b: CLI Usage
+#### Option 2b: CLI Usage 
 
 Use directly with Nuxt CLI:
 
