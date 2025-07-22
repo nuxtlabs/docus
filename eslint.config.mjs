@@ -3,7 +3,8 @@ import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
 export default createConfigForNuxt({
   dirs: {
     src: [
-      './app',
+      './layer',
+      './docs',
     ],
   },
   features: {

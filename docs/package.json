@@ -3,14 +3,17 @@
   "description": "Official documentation for Docus, also used as playground.",
   "type": "module",
   "scripts": {
-    "build": "docus build",
-    "dev": "docus dev"
+    "build": "nuxt build --extends docus",
+    "dev": "nuxt dev --extends docus"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^9.5.6",
-    "@nuxtjs/plausible": "^1.2.0"
+    "@nuxtjs/plausible": "^1.2.0",
+    "@nuxt/ui-pro": "^3.2.0",
+    "docus": "workspace:*",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "docus": "workspace:*"
+    "nuxt": "4.0.0"
   }
 }

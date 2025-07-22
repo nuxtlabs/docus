@@ -9,7 +9,6 @@ export default defineAppConfig({
     contentNavigation: {
       slots: {
         linkLeadingIcon: 'size-4 mr-1',
-        listWithChildren: 'border-(--ui-bg-elevated)',
         linkTrailing: 'hidden',
       },
       variants: {

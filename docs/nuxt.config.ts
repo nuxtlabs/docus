@@ -1,12 +1,10 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/plausible', '@nuxtjs/i18n'],
-  css: ['../app/assets/css/main.css'],
+  css: ['~/assets/css/main.css'],
   site: {
     name: 'Docus',
   },
-  future: {
-    compatibilityVersion: 4,
-  },
+  compatibilityDate: '2025-07-18',
   i18n: {
     defaultLocale: 'en',
     locales: [{

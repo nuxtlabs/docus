@@ -1,4 +1,10 @@
 import { defineContentConfig, defineCollection, z, type DefinedCollection } from '@nuxt/content'
+import { useNuxt } from '@nuxt/kit'
+import { joinURL } from 'ufo'
+
+const { options } = useNuxt()
+const cwd = joinURL(options.rootDir, 'content')
+const locales = options.i18n?.locales
 
 const createDocsSchema = () => z.object({
   links: z.array(z.object({
@@ -11,28 +17,23 @@ const createDocsSchema = () => z.object({
 
 let collections: Record<string, DefinedCollection>
 
-// @ts-expect-error __LOCALES__ is not defined
-if (globalThis.__LOCALES__ && Array.isArray(globalThis.__LOCALES__)) {
+if (locales && Array.isArray(locales)) {
   collections = {}
-  // @ts-expect-error __LOCALES__ is not defined
-  for (const locale of globalThis.__LOCALES__) {
+  for (const locale of locales) {
     const code = typeof locale === 'string' ? locale : locale.code
 
     collections[`landing_${code}`] = defineCollection({
       type: 'page',
       source: {
-        // @ts-expect-error __DOCS_DIR__ is not defined
-        cwd: globalThis.__DOCS_DIR__,
+        cwd,
         include: `${code}/index.md`,
-        // prefix: `/${code}`,
       },
     })
 
     collections[`docs_${code}`] = defineCollection({
       type: 'page',
       source: {
-        // @ts-expect-error __DOCS_DIR__ is not defined
-        cwd: globalThis.__DOCS_DIR__,
+        cwd,
         include: `${code}/**/*.md`,
         prefix: `/${code}`,
         exclude: [`${code}/index.md`],
@@ -46,16 +47,14 @@ else {
     landing: defineCollection({
       type: 'page',
       source: {
-        // @ts-expect-error __DOCS_DIR__ is not defined
-        cwd: globalThis.__DOCS_DIR__,
+        cwd,
         include: 'index.md',
       },
     }),
     docs: defineCollection({
       type: 'page',
       source: {
-        // @ts-expect-error __DOCS_DIR__ is not defined
-        cwd: globalThis.__DOCS_DIR__,
+        cwd,
         include: '**',
         exclude: ['index.md'],
       },

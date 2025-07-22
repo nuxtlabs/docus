@@ -1,0 +1,40 @@
+{
+  "name": "docus",
+  "description": "Nuxt layer for Docus documentation theme",
+  "version": "3.0.7",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "files": [
+    "app",
+    "content.config.ts",
+    "modules",
+    "nuxt.config.ts",
+    "nuxt.schema.ts",
+    "server",
+    "utils",
+    "README.md"
+  ],
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.57",
+    "@iconify-json/simple-icons": "^1.2.43",
+    "@iconify-json/vscode-icons": "^1.2.23",
+    "@nuxt/content": "^3.6.3",
+    "@nuxt/image": "^1.10.0",
+    "@nuxt/kit": "^4.0.0",
+    "@nuxt/ui-pro": "^3.2.0",
+    "@nuxtjs/mdc": "^0.17.1",
+    "@nuxtjs/robots": "^5.4.0",
+    "@vueuse/core": "^13.5.0",
+    "defu": "^6.1.4",
+    "motion-v": "^1.5.0",
+    "nuxt-llms": "^0.1.3",
+    "nuxt-og-image": "^5.1.9",
+    "scule": "^1.3.0",
+    "tailwindcss": "^4.1.11",
+    "ufo": "^1.6.1"
+  },
+  "peerDependencies": {
+    "better-sqlite3": "12.x",
+    "nuxt": "4.x"
+  }
+} 

@@ -6,8 +6,8 @@ import { createCLI } from './cli'
 dotenv.config()
 
 const cli = createCLI({
-  name: 'Docus',
-  description: 'Docus Docs CLI',
+  name: 'create-docus',
+  description: 'Create a new Docus documentation project',
   setup: {
     defaults: {},
   },

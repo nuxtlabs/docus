@@ -2,7 +2,7 @@
 @import "@nuxt/ui-pro";
 
 @source "../../../content/**/*";
-@source "../../../../app/**/*";
+@source "../../../../layer/app/**/*";
 
 @theme static {
   --font-sans: 'Public Sans', sans-serif;

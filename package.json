@@ -1,61 +1,46 @@
 {
-  "name": "docus",
+  "name": "create-docus",
   "description": "Minimal Documentation theme and CLI for shared usage across Nuxt modules",
   "repository": {
     "type": "git",
     "url": "https://github.com/nuxtlabs/docus"
   },
   "private": false,
-  "version": "3.0.5",
+  "version": "3.0.7",
   "keywords": [],
   "license": "MIT",
   "bin": {
-    "docus": "./dist/main.mjs"
+    "create-docus": "./dist/main.mjs"
   },
   "files": [
-    "app",
-    "dist",
-    "!app/**/node_modules",
-    "!app/**/.nuxt",
-    "!app/**/tsconfig.json"
+    "dist"
   ],
   "scripts": {
     "dev": "npm run docs:dev",
-    "docs:dev": "NUXT_DOCS_DEV=1 npm run docus dev docs",
-    "docs:build": "npm run docus build docs",
-    "dev:prepare": "nuxi prepare app && npm run docus prepare docs",
+    "docs:dev": "NUXT_DOCS_DEV=1 nuxt dev docs --extends ../layer",
+    "docs:build": "nuxt build docs --extends ../layer",
+    "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "build": "tsup-node ./cli/main.ts --format esm",
     "docus": "tsx ./cli/main.ts",
     "test": "echo \"Error: no test specified\"",
     "lint": "eslint .",
-    "typecheck": "nuxi typecheck app",
-    "release": "npm run lint && npm run test && npm run build && npm run typecheck && release-it"
+    "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer",
+    "release": "npm run lint && npm run test && npm run build && release-it",
+    "publish:layer": "cd layer && npm publish",
+    "publish:cli": "npm run build && npm publish",
+    "publish:all": "npm run publish:layer && npm run publish:cli"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.56",
-    "@iconify-json/simple-icons": "^1.2.42",
-    "@iconify-json/vscode-icons": "^1.2.23",
-    "@nuxtjs/i18n": "^9.5.6",
-    "@nuxt/content": "^3.6.3",
-    "@nuxt/image": "^1.10.0",
-    "@nuxt/kit": "^3.17.6",
-    "@nuxt/ui-pro": "^3.2.0",
-    "@nuxtjs/mdc": "^0.17.0",
-    "@nuxtjs/robots": "^5.3.0",
-    "@vueuse/core": "^13.5.0",
-    "c12": "^3.0.4",
+    "@nuxt/kit": "^4.0.0",
+    "c12": "^3.1.0",
     "citty": "^0.1.6",
     "defu": "^6.1.4",
-    "dotenv": "^17.0.1",
+    "dotenv": "^17.2.0",
     "git-url-parse": "^16.1.0",
     "minimark": "^0.2.0",
-    "motion-v": "^1.5.0",
-    "nuxi": "^3.25.1",
-    "nuxt-llms": "^0.1.3",
-    "nuxt-og-image": "^5.1.9",
+    "nuxi": "^3.26.2",
     "pkg-types": "^2.2.0",
     "scule": "^1.3.0",
-    "tailwindcss": "^4.1.11",
     "ufo": "^1.6.1",
     "unctx": "^2.4.1",
     "unist-util-visit": "^5.0.0"
@@ -63,18 +48,14 @@
   "devDependencies": {
     "@nuxt/eslint-config": "^1.5.2",
     "@release-it/conventional-changelog": "^10.0.1",
-    "@types/node": "^24.0.10",
+    "@types/node": "^24.0.14",
     "changelogen": "^0.6.2",
-    "eslint": "^9.30.1",
+    "eslint": "^9.31.0",
     "release-it": "^19.0.3",
     "tsup": "^8.5.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "vue-tsc": "^3.0.1"
   },
-  "peerDependencies": {
-    "better-sqlite3": "11.x",
-    "nuxt": "3.x"
-  },
-  "packageManager": "pnpm@10.12.4"
+  "packageManager": "pnpm@10.13.1"
 }
