@@ -1,5 +1,5 @@
 {
-  "name": "@larbish/docus",
+  "name": "create-docus",
   "description": "Minimal Documentation theme and CLI for shared usage across Nuxt modules",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "keywords": [],
   "license": "MIT",
   "bin": {
-    "docus": "./dist/main.mjs"
+    "create-docus": "./dist/main.mjs"
   },
   "files": [
     "dist"
@@ -26,8 +26,8 @@
     "lint": "eslint .",
     "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer",
     "release": "npm run lint && npm run test && npm run build && release-it",
-    "publish:layer": "cd layer && npm publish --access public",
-    "publish:cli": "npm run build && npm publish --access public",
+    "publish:layer": "cd layer && npm publish",
+    "publish:cli": "npm run build && npm publish",
     "publish:all": "npm run publish:layer && npm run publish:cli"
   },
   "dependencies": {
@@ -56,10 +56,6 @@
     "tsx": "^4.20.3",
     "typescript": "^5.8.3",
     "vue-tsc": "^3.0.1"
-  },
-  "peerDependencies": {
-    "better-sqlite3": "11.x",
-    "nuxt": "4.x"
   },
   "packageManager": "pnpm@10.13.1"
 }

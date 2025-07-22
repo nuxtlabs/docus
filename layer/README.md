@@ -1,11 +1,11 @@
-# @larbish/docus-layer
+# docus
 
 > A minimal and beautiful Nuxt layer for documentation websites
 
-[![npm version](https://img.shields.io/npm/v/@larbish/docus-layer.svg)](https://www.npmjs.com/package/@larbish/docus-layer)
-[![npm downloads](https://img.shields.io/npm/dm/@larbish/docus-layer.svg)](https://www.npmjs.com/package/@larbish/docus-layer)
+[![npm version](https://img.shields.io/npm/v/docus.svg)](https://www.npmjs.com/package/docus)
+[![npm downloads](https://img.shields.io/npm/dm/docus.svg)](https://www.npmjs.com/package/docus)
 
-This is the official Nuxt layer for [Docus](https://docus.dev), providing a complete documentation theming. It works with the Docus CLI for rapid project setup.
+This is the official Nuxt layer for [Docus](https://docus.dev), providing a complete documentation theming. It works with the [Docus CLI](https://github.com/nuxtlabs/docus) for rapid project setup.
 
 ## 🚀 Features
 
@@ -22,7 +22,7 @@ This is the official Nuxt layer for [Docus](https://docus.dev), providing a comp
 ## 📦 Installation
 
 ```bash
-npm install @larbish/docus-layer
+npm install docus
 ```
 
 ## 🏗️ Quick Setup
@@ -33,7 +33,7 @@ The easiest way to get started is using the Docus CLI, which automatically sets 
 
 ```bash
 # Create a new documentation project
-npx @larbish/docus init my-docs
+npx create-docus my-docs
 
 # Navigate to your project
 cd my-docs
@@ -42,7 +42,7 @@ cd my-docs
 npm run dev
 ```
 
-This creates a complete documentation project pre-configured with `@larbish/docus-layer`.
+This creates a complete documentation project pre-configured with `docus`.
 
 ### Option 2: Manual Setup
 
@@ -52,7 +52,7 @@ Add the layer to your `nuxt.config.ts`:
 
 ```typescript
 export default defineNuxtConfig({
-  extends: ['@larbish/docus-layer']
+  extends: ['docus']
 })
 ```
 
@@ -62,15 +62,15 @@ Use directly with Nuxt CLI:
 
 ```bash
 # Development
-nuxt dev --extends @larbish/docus-layer
+nuxt dev --extends docus
 
 # Build
-nuxt build --extends @larbish/docus-layer
+nuxt build --extends docus
 ```
 
 ## 🔗 Related Packages
 
-- [`@larbish/docus`](https://www.npmjs.com/package/@larbish/docus) - CLI tools for Docus
+- [`create-docus`](https://www.npmjs.com/package/create-docus) - CLI tool to scaffold Docus projects
 
 ## 📄 License
 

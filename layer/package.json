@@ -1,5 +1,5 @@
 {
-  "name": "@larbish/docus-layer",
+  "name": "docus",
   "description": "Nuxt layer for Docus documentation theme",
   "version": "3.0.7",
   "type": "module",
@@ -34,6 +34,7 @@
     "ufo": "^1.6.1"
   },
   "peerDependencies": {
-    "nuxt": "^4.0.0"
+    "better-sqlite3": "12.x",
+    "nuxt": "4.x"
   }
 } 

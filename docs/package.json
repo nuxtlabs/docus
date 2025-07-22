@@ -3,14 +3,11 @@
   "description": "Official documentation for Docus, also used as playground.",
   "type": "module",
   "scripts": {
-    "build": "nuxt build --extends @larbish/docus-layer",
-    "dev": "nuxt dev --extends @larbish/docus-layer"
+    "build": "nuxt build --extends docus",
+    "dev": "nuxt dev --extends docus"
   },
   "dependencies": {
     "@nuxtjs/plausible": "^1.2.0",
-    "@larbish/docus-layer": "3.0.5"
-  },
-  "devDependencies": {
-    "@larbish/docus": "workspace:*"
+    "docus": "workspace:*"
   }
 }

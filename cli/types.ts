@@ -5,13 +5,12 @@ export interface CLIOptions {
 }
 
 export interface DocsOptions {
-  dev?: boolean
   defaults?: {
     // Module name
     name?: string
     // Module description
     description?: string
-    // Docs directory
+    // Project directory
     dir?: string
     // Website URL
     url?: string
