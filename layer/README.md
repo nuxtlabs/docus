@@ -1,4 +1,6 @@
-# docus
+[![docus](https://docus.dev/__og-image__/static/og.png)](https://docus.dev)
+
+# Docus
 
 > A minimal and beautiful Nuxt layer for documentation websites
 

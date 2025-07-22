@@ -1,4 +1,4 @@
-[![docus](https://docus-puce.vercel.app/__og-image__/static/og.png)](https://docus.dev)
+[![docus](https://docus.dev/__og-image__/static/og.png)](https://docus.dev)
 
 > CLI tool to create beautiful docs with Markdown
 
