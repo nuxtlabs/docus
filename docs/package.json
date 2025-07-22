@@ -7,7 +7,12 @@
     "dev": "nuxt dev --extends docus"
   },
   "dependencies": {
+    "@nuxt/ui-pro": "^3.2.0",
     "@nuxtjs/plausible": "^1.2.0",
-    "docus": "workspace:*"
+    "docus": "workspace:*",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "nuxt": "4.0.0"
   }
 }
