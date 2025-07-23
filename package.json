@@ -16,7 +16,7 @@
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck layer",
-    "release": "pnpm release --workspaces && release-it"
+    "release": "npm run release --workspaces && release-it"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.7.0",
