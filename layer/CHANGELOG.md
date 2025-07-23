@@ -1,5 +1,7 @@
 # Changelog
 
+## [4.0.0-beta.4](https://github.com/nuxtlabs/docus/compare/layer-v4.0.0-beta.3...layer-v4.0.0-beta.4) (2025-07-23)
+
 ## 4.0.0-beta.3 (2025-07-23)
 
 ### ⚠ BREAKING CHANGES

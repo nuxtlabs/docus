@@ -1,7 +1,7 @@
 {
   "name": "docus-workspace",
   "description": "Minimal Documentation theme and CLI for shared usage across Nuxt modules",
-  "version": "4.0.0-beta.3",
+  "version": "4.0.0-beta.4",
   "workspaces": [
     "layer",
     "cli"
