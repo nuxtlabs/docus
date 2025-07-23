@@ -9,7 +9,7 @@
     "web": true
   },
   "hooks": {
-    "before:init": ["cd cli && pnpm lint && pnpm build"],
+    "before:init": ["pnpm lint", "pnpm typecheck", "cd cli && pnpm build"],
     "after:bump": "cd cli && pnpm build"
   },
   "npm": {
