@@ -13,11 +13,15 @@
     "docs:build": "nuxt build docs --extends ../layer",
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "lint": "eslint .",
-    "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer"
+    "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer",
+    "cli:release": "release-it --config .release-it.cli.json",
+    "layer:release": "release-it --config .release-it.layer.json"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^1.5.2",
-    "nuxt": "^4.0.0"
+    "@release-it/conventional-changelog": "^10.0.1",
+    "nuxt": "^4.0.0",
+    "release-it": "^19.0.4"
   },
   "packageManager": "pnpm@10.13.1",
   "version": ""

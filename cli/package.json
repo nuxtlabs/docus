@@ -18,8 +18,7 @@
   "scripts": {
     "prepare": "pnpm build",
     "build": "tsup-node ./main.ts --format esm",
-    "dev": "tsx ./main.ts",
-    "lint": "eslint ."
+    "dev": "tsx ./main.ts"
   },
   "dependencies": {
     "@nuxt/kit": "^4.0.0",

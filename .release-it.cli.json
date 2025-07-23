@@ -1,0 +1,29 @@
+{
+  "git": {
+    "commitMessage": "chore(cli): release v${version}",
+    "tagName": "cli-v${version}"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "CLI v${version}",
+    "web": true
+  },
+  "hooks": {
+    "before:init": ["cd cli && pnpm lint && pnpm build"],
+    "after:bump": "cd cli && pnpm build"
+  },
+  "npm": {
+    "publish": true,
+    "publishPath": "cli"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "conventionalcommits"
+      },
+      "infile": "cli/CHANGELOG.md",
+      "header": "# Changelog",
+      "ignoreRecommendedBump": true
+    }
+  }
+} 

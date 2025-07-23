@@ -15,9 +15,6 @@
     "utils",
     "README.md"
   ],
-  "scripts": {
-    "release": "release-it"
-  },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.57",
     "@iconify-json/simple-icons": "^1.2.43",
@@ -40,9 +37,5 @@
   "peerDependencies": {
     "better-sqlite3": "12.x",
     "nuxt": "4.x"
-  },
-  "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.1",
-    "release-it": "^19.0.4"
   }
 }

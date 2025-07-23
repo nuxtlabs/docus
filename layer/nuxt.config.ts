@@ -3,7 +3,6 @@ import { extendViteConfig, createResolver } from '@nuxt/kit'
 const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-22',
   modules: [
     '@nuxt/ui-pro',
     '@nuxt/content',
@@ -35,6 +34,7 @@ export default defineNuxtConfig({
       },
     },
   },
+  compatibilityDate: '2025-07-22',
   nitro: {
     prerender: {
       routes: ['/'],

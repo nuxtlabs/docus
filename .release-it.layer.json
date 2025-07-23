@@ -1,24 +1,28 @@
 {
   "git": {
-    "commitMessage": "chore(release): v${version}",
-    "tagName": "v${version}"
+    "commitMessage": "chore(layer): release v${version}",
+    "tagName": "layer-v${version}"
   },
   "github": {
     "release": true,
-    "releaseName": "v${version}",
+    "releaseName": "Layer v${version}",
     "web": true
   },
   "hooks": {
     "before:init": ["pnpm lint", "pnpm typecheck"]
+  },
+  "npm": {
+    "publish": true,
+    "publishPath": "layer"
   },
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": {
         "name": "conventionalcommits"
       },
-      "infile": "CHANGELOG.md",
+      "infile": "layer/CHANGELOG.md",
       "header": "# Changelog",
       "ignoreRecommendedBump": true
     }
   }
-}
+} 
