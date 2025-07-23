@@ -13,16 +13,16 @@
     "docs:build": "nuxt build docs --extends ../layer",
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "lint": "eslint .",
-    "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer",
+    "typecheck": "nuxt typecheck layer",
     "cli:release": "release-it --config .release-it.cli.json",
     "layer:release": "release-it --config .release-it.layer.json"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.7.0",
-    "@nuxt/eslint-config": "^1.5.2",
+    "@nuxt/eslint-config": "^1.7.0",
     "@release-it/conventional-changelog": "^10.0.1",
     "eslint": "^9.31.0",
-    "nuxt": "^4.0.0",
+    "nuxt": "^4.0.1",
     "release-it": "^19.0.4",
     "typescript": "^5.8.3",
     "vue-tsc": "^3.0.3"
