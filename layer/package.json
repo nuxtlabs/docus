@@ -15,6 +15,9 @@
     "utils",
     "README.md"
   ],
+  "scripts": {
+    "release": "release-it"
+  },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.58",
     "@iconify-json/simple-icons": "^1.2.44",

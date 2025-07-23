@@ -1,6 +1,8 @@
 {
   "name": "docus-workspace",
   "description": "Minimal Documentation theme and CLI for shared usage across Nuxt modules",
+  "version": "4.0.0-beta.2",
+  "workspaces": ["layer", "cli"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nuxtlabs/docus.git"
@@ -14,8 +16,7 @@
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck layer",
-    "cli:release": "release-it --config .release-it.cli.json",
-    "layer:release": "release-it --config .release-it.layer.json"
+    "release": "pnpm release --workspace && release-it"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.7.0",

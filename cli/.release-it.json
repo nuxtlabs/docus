@@ -1,0 +1,10 @@
+{
+  "git": false,
+  "hooks": {
+    "after:bump": "pnpm build"
+  },
+  "npm": {
+    "publish": true,
+    "publishPath": "cli"
+  }
+} 

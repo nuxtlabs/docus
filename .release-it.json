@@ -1,5 +1,6 @@
 {
   "git": {
+    "requireCleanWorkingDir": false,
     "commitMessage": "chore(layer): release v${version}",
     "tagName": "layer-v${version}"
   },
@@ -12,8 +13,7 @@
     "before:init": ["pnpm lint", "pnpm typecheck"]
   },
   "npm": {
-    "publish": true,
-    "publishPath": "layer"
+    "publish": false
   },
   "plugins": {
     "@release-it/conventional-changelog": {

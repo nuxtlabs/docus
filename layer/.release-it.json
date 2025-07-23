@@ -1,0 +1,7 @@
+{
+  "git": false,
+  "npm": {
+    "publish": true,
+    "publishPath": "layer"
+  }
+} 
