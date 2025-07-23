@@ -9,7 +9,7 @@
     "web": true
   },
   "hooks": {
-    "before:init": ["pnpm lint"]
+    "before:init": ["pnpm lint", "pnpm typecheck"]
   },
   "plugins": {
     "@release-it/conventional-changelog": {
