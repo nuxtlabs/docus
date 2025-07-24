@@ -19,8 +19,8 @@
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck layer",
-    "layer:release": "release-it --config .release-it.layer.json",
-    "cli:release": "release-it --config .release-it.cli.json",
+    "layer:release": "release-it --config .release-it.layer.json && npm publish layer",
+    "cli:release": "release-it --config .release-it.cli.json && npm publish cli",
     "release": "pnpm run layer:release && pnpm run cli:release && release-it"
   },
   "devDependencies": {

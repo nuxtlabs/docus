@@ -4,10 +4,7 @@
     "after:bump": "cd cli && pnpm build"
   },
   "npm": {
-    "publish": true,
-    "publishPath": "cli",
-    "allowSameVersion": true,
-    "skipChecks": true
+    "publish": false
   },
   "plugins": {
     "@release-it/bumper": {

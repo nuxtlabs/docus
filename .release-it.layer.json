@@ -5,8 +5,7 @@
     "before:init": ["pnpm lint", "pnpm typecheck"]
   },
   "npm": {
-    "publish": true,
-    "publishPath": "layer"
+    "publish": false
   },
   "plugins": {
     "@release-it/bumper": {
