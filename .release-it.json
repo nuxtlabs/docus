@@ -1,24 +1,25 @@
 {
   "git": {
     "requireCleanWorkingDir": false,
-    "commitMessage": "chore(layer): release v${version}",
-    "tagName": "layer-v${version}"
+    "commitMessage": "chore(version): release v${version}",
+    "tagName": "v${version}"
   },
   "github": {
     "release": true,
-    "releaseName": "Layer v${version}",
+    "releaseName": "Docus layer and CLI v${version}",
     "web": true
   },
   "npm": {
     "publish": false,
-    "allowSameVersion": true
+    "allowSameVersion": true,
+    "ignoreVersion": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": {
         "name": "conventionalcommits"
       },
-      "infile": "layer/CHANGELOG.md",
+      "infile": "CHANGELOG.md",
       "header": "# Changelog",
       "ignoreRecommendedBump": true
     }
