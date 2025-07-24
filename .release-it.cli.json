@@ -1,10 +1,10 @@
 {
   "git": false,
   "hooks": {
+    "before:init": ["pnpm lint", "pnpm typecheck"],
     "after:bump": "pnpm build"
   },
   "npm": {
-    "publish": true,
-    "publishPath": "cli"
+    "publish": true
   }
 } 

@@ -9,9 +9,6 @@
     "releaseName": "Layer v${version}",
     "web": true
   },
-  "hooks": {
-    "before:init": ["pnpm lint", "pnpm typecheck"]
-  },
   "npm": {
     "publish": false
   },

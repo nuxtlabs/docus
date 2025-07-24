@@ -1,0 +1,11 @@
+{
+  "git": false,
+  "github": false,
+  "hooks": {
+    "before:init": ["pnpm lint", "pnpm typecheck"]
+  },
+  "npm": {
+    "publish": true,
+    "publishPath": "layer"
+  }
+} 
