@@ -6,7 +6,7 @@
     "url": "git+https://github.com/nuxtlabs/docus.git"
   },
   "private": false,
-  "version": "4.0.0-beta.5",
+  "version": "4.0.0-beta.6",
   "keywords": [],
   "license": "MIT",
   "bin": {
