@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.0.0-beta.9](https://github.com/nuxtlabs/docus/compare/v3.0.5...v4.0.0-beta.9) (2025-07-24)
+
+### Features
+
+* **app:** i18n integration ([3854b30](https://github.com/nuxtlabs/docus/commit/3854b30ca6162c56344a738a1fd5d5c961389deb))
+* **cli:** add `prepare` command ([2bec323](https://github.com/nuxtlabs/docus/commit/2bec3236ffa47d2503b97e676318122ac9b43d4b))
+* **cli:** use native nuxt cli instead of docus CLI ([282d8e5](https://github.com/nuxtlabs/docus/commit/282d8e5b26fe718c4d72d8d75a1a65652ddffe04))
+* **cli:** use native nuxt cli instead of docus CLI ([#1117](https://github.com/nuxtlabs/docus/issues/1117)) ([ff4bc93](https://github.com/nuxtlabs/docus/commit/ff4bc93ea3b6b903632b20419ca1ceb6b0965392))
+
+### Bug Fixes
+
+* **app:** correct types ([448b78a](https://github.com/nuxtlabs/docus/commit/448b78a4fb3539047f2e23eb36d04afb77c03f4b))
+
 ## [3.0.5](https://github.com/nuxtlabs/docus/compare/v3.0.4...v3.0.5) (2025-07-01)
 
 ### Features
