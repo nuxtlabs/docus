@@ -6,7 +6,7 @@
   },
   "github": {
     "release": true,
-    "releaseName": "Docus layer and CLI v${version}",
+    "releaseName": "v${version}",
     "web": true
   },
   "npm": {
