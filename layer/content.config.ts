@@ -1,4 +1,5 @@
-import { defineContentConfig, defineCollection, z, DefinedCollection } from '@nuxt/content'
+import type { DefinedCollection } from '@nuxt/content'
+import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 import { useNuxt } from '@nuxt/kit'
 import { joinURL } from 'ufo'
 

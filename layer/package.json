@@ -43,6 +43,9 @@
     "ufo": "^1.6.1",
     "unist-util-visit": "^5.0.0"
   },
+  "devDependencies": {
+    "@nuxtjs/i18n": "^9.5.6"
+  },
   "peerDependencies": {
     "better-sqlite3": "12.x",
     "nuxt": "4.x"

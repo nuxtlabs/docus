@@ -56,7 +56,7 @@ const links = computed(() => appConfig.github?.url
           v-if="isEnabled"
           v-model="locale"
           :locales="locales"
-          @update:model-value="navigateTo(switchLocalePath($event) || localePath('/'))"
+          @update:model-value="navigateTo(switchLocalePath($event as string) || localePath('/'))"
         />
 
         <template #fallback>

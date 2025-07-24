@@ -1,4 +1,5 @@
-import en from '../i18n/locales/en.json'
+import en from '../../i18n/locales/en.json'
+import type { LocaleObject } from '@nuxtjs/i18n'
 
 export const useDocusI18n = () => {
   const config = useRuntimeConfig().public
@@ -8,12 +9,12 @@ export const useDocusI18n = () => {
     return {
       isEnabled,
       locale: ref('en'),
-      locales: ref([]),
+      locales: ref<LocaleObject<string>[]>([]),
       localePath: (path: string) => path,
       switchLocalePath: () => {},
-      t: (key: string) => {
+      t: (key: string): string => {
         const path = key.split('.')
-        return path.reduce((acc: unknown, curr) => (acc as Record<string, unknown>)?.[curr], en)
+        return path.reduce((acc: unknown, curr) => (acc as Record<string, unknown>)?.[curr], en) as string
       },
     }
   }
