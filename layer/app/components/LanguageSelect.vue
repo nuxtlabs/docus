@@ -65,7 +65,7 @@ function getEmojiFlag(locale: string): string {
         >
           <NuxtLink
             class="flex justify-between py-2 px-1.5 gap-1 hover:bg-neutral-100 dark:hover:bg-neutral-800"
-            :to="switchLocalePath(localeItem.code)"
+            :to="switchLocalePath(localeItem.code) as string"
             :aria-label="localeItem.name"
           >
             <span class="text-sm">
