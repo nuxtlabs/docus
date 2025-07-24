@@ -12,6 +12,7 @@
   "license": "MIT",
   "files": [
     "app",
+    "i18n",
     "content.config.ts",
     "modules",
     "nuxt.config.ts",
