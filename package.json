@@ -1,7 +1,7 @@
 {
   "name": "docus-workspace",
   "description": "Minimal Documentation theme and CLI for shared usage across Nuxt modules",
-  "version": "4.0.0-beta.3",
+  "version": "4.0.0-beta.4",
   "workspaces": [
     "layer",
     "cli"
@@ -19,9 +19,9 @@
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck layer",
-    "layer:release": "release-it --config .release-it.layer.json",
-    "cli:release": "release-it --config .release-it.cli.json",
-    "release": "pnpm run layer:release && pnpm run cli:release && release-it"
+    "layer:release": "release-it --config .release-it.layer.json --dry",
+    "cli:release": "release-it --config .release-it.cli.json --dry",
+    "release": "pnpm run layer:release && pnpm run cli:release && release-it --dry"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.7.0",
