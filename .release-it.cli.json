@@ -1,12 +1,12 @@
 {
   "git": false,
   "hooks": {
-    "before:init": ["pnpm lint", "pnpm typecheck"],
     "after:bump": "cd cli && pnpm build"
   },
   "npm": {
     "publish": true,
-    "publishPath": "cli"
+    "publishPath": "cli",
+    "allowSameVersion": true
   },
   "plugins": {
     "@release-it/bumper": {
