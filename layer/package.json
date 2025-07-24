@@ -1,7 +1,7 @@
 {
   "name": "docus",
   "description": "Nuxt layer for Docus documentation theme",
-  "version": "4.0.0-beta.9",
+  "version": "4.0.0-beta.10",
   "type": "module",
   "main": "./nuxt.config.ts",
   "repository": {

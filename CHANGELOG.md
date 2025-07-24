@@ -1,5 +1,7 @@
 # Changelog
 
+## [4.0.0-beta.10](https://github.com/nuxtlabs/docus/compare/v4.0.0-beta.9...v4.0.0-beta.10) (2025-07-24)
+
 ## [4.0.0-beta.9](https://github.com/nuxtlabs/docus/compare/v3.0.5...v4.0.0-beta.9) (2025-07-24)
 
 ### Features
