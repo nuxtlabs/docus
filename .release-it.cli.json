@@ -6,7 +6,8 @@
   "npm": {
     "publish": true,
     "publishPath": "cli",
-    "allowSameVersion": true
+    "allowSameVersion": true,
+    "skipChecks": true
   },
   "plugins": {
     "@release-it/bumper": {
