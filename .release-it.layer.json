@@ -1,0 +1,16 @@
+{
+  "git": false,
+  "github": false,
+  "hooks": {
+    "before:init": ["pnpm lint", "pnpm typecheck"]
+  },
+  "npm": {
+    "publish": false
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "in": "./layer/package.json",
+      "out": "./layer/package.json"
+    }
+  }
+} 

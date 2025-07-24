@@ -1,11 +1,13 @@
-# docus
+[![docus](https://docus.dev/__og-image__/static/og.png)](https://docus.dev)
+
+# Docus
 
 > A minimal and beautiful Nuxt layer for documentation websites
 
 [![npm version](https://img.shields.io/npm/v/docus.svg)](https://www.npmjs.com/package/docus)
 [![npm downloads](https://img.shields.io/npm/dm/docus.svg)](https://www.npmjs.com/package/docus)
 
-This is the official Nuxt layer for [Docus](https://docus.dev), providing a complete documentation theming. It works with the [Docus CLI](https://github.com/nuxtlabs/docus) for rapid project setup.
+This is the official Nuxt layer for [Docus](https://docus.dev), providing a complete documentation theming. It works with the [Docus CLI](https://github.com/nuxtlabs/docus/tree/main/cli) for rapid project setup.
 
 ## 🚀 Features
 

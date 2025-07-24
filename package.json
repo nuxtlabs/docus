@@ -1,61 +1,34 @@
 {
-  "name": "create-docus",
+  "name": "docus-workspace",
   "description": "Minimal Documentation theme and CLI for shared usage across Nuxt modules",
+  "version": "4.0.0-beta.8",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nuxtlabs/docus"
+    "url": "git+https://github.com/nuxtlabs/docus.git"
   },
-  "private": false,
-  "version": "3.0.7",
-  "keywords": [],
+  "private": true,
   "license": "MIT",
-  "bin": {
-    "create-docus": "./dist/main.mjs"
-  },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "dev": "npm run docs:dev",
-    "docs:dev": "NUXT_DOCS_DEV=1 nuxt dev docs --extends ../layer",
+    "dev": "pnpm run docs:dev",
+    "docs:dev": "cd docs && nuxt dev --extends ../layer",
     "docs:build": "nuxt build docs --extends ../layer",
     "dev:prepare": "nuxt prepare layer && nuxt prepare docs --extends ../layer",
-    "build": "tsup-node ./cli/main.ts --format esm",
-    "docus": "tsx ./cli/main.ts",
-    "test": "echo \"Error: no test specified\"",
     "lint": "eslint .",
-    "typecheck": "nuxi typecheck layer && nuxi typecheck docs --extends ../layer",
-    "release": "npm run lint && npm run test && npm run build && release-it",
-    "publish:layer": "cd layer && npm publish",
-    "publish:cli": "npm run build && npm publish",
-    "publish:all": "npm run publish:layer && npm run publish:cli"
-  },
-  "dependencies": {
-    "@nuxt/kit": "^4.0.0",
-    "c12": "^3.1.0",
-    "citty": "^0.1.6",
-    "defu": "^6.1.4",
-    "dotenv": "^17.2.0",
-    "git-url-parse": "^16.1.0",
-    "minimark": "^0.2.0",
-    "nuxi": "^3.26.2",
-    "pkg-types": "^2.2.0",
-    "scule": "^1.3.0",
-    "ufo": "^1.6.1",
-    "unctx": "^2.4.1",
-    "unist-util-visit": "^5.0.0"
+    "typecheck": "nuxt typecheck layer",
+    "layer:release": "release-it --config .release-it.layer.json && cd layer && npm publish",
+    "cli:release": "release-it --config .release-it.cli.json && cd cli && npm publish",
+    "release": "pnpm run layer:release && pnpm run cli:release && release-it"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^1.5.2",
+    "@nuxt/eslint": "^1.7.0",
+    "@nuxt/eslint-config": "^1.7.0",
+    "@release-it/bumper": "^7.0.5",
     "@release-it/conventional-changelog": "^10.0.1",
-    "@types/node": "^24.0.14",
-    "changelogen": "^0.6.2",
     "eslint": "^9.31.0",
-    "release-it": "^19.0.3",
-    "tsup": "^8.5.0",
-    "tsx": "^4.20.3",
+    "nuxt": "^4.0.1",
+    "release-it": "^19.0.4",
     "typescript": "^5.8.3",
-    "vue-tsc": "^3.0.1"
+    "vue-tsc": "^3.0.3"
   },
   "packageManager": "pnpm@10.13.1"
 }

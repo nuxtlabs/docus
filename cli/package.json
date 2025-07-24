@@ -1,0 +1,39 @@
+{
+  "name": "create-docus",
+  "description": "CLI for creating Docus documentation projects",
+  "version": "4.0.0-beta.8",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuxtlabs/docus.git"
+  },
+  "private": false,
+  "license": "MIT",
+  "bin": {
+    "create-docus": "dist/main.mjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "pnpm build",
+    "build": "tsup-node ./main.ts --format esm",
+    "dev": "tsx ./main.ts"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^4.0.0",
+    "c12": "^3.1.0",
+    "citty": "^0.1.6",
+    "defu": "^6.1.4",
+    "dotenv": "^17.2.0",
+    "nuxi": "^3.26.2",
+    "scule": "^1.3.0",
+    "ufo": "^1.6.1",
+    "unctx": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.14",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3"
+  },
+  "packageManager": "pnpm@10.13.1"
+}

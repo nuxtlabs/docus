@@ -49,11 +49,10 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-      - name: Build
+      - name: Build CLI
         run: pnpm run build
+        working-directory: ./cli
 
-      - name: Publish Main Package
-        run: pnpx pkg-pr-new publish --compact --no-template --pnpm
-
-      - name: Publish Layer Package
-        run: pnpx pkg-pr-new publish ./layer --compact --no-template --pnpm
+      - name: Publish CLI
+        run: npx pkg-pr-new publish --compact --no-template --pnpm
+        working-directory: ./cli

@@ -1,10 +1,12 @@
 [![docus](https://docus.dev/__og-image__/static/og.png)](https://docus.dev)
 
-> Create beautiful docs with Markdown & Vue components
+> CLI tool to create beautiful docs with Markdown
 
-[![npm version](https://img.shields.io/npm/v/docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/docus)
-[![npm downloads](https://img.shields.io/npm/dm/docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npm.chart.dev/docus)
-[![License](https://img.shields.io/npm/l/docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/docus)
+[![npm version](https://img.shields.io/npm/v/create-docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/create-docus)
+[![npm downloads](https://img.shields.io/npm/dm/create-docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npm.chart.dev/create-docus)
+[![License](https://img.shields.io/npm/l/create-docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/create-docus)
+
+The fastest way to create a new [Docus](https://docus.dev) documentation project. This CLI tool scaffolds a complete documentation website using the [`docus`](https://www.github.com/nuxtlabs/docus/tree/main/layer) Nuxt layer.
 
 ## 🚀 Quick Start
 
@@ -35,8 +37,6 @@ The CLI scaffolds a complete documentation project with:
 - 🎨 **Customizable** - Easy theming and brand customization
 - ⚡ **Fast** - Optimized for performance with Nuxt 4
 - 🔧 **TypeScript** - Full TypeScript support
-
-Learn more on the [Docus documentation](https://docus.dev).
 
 ## 📁 Project Structure
 
@@ -77,6 +77,10 @@ Your project comes pre-configured with the best of the Nuxt ecosystem:
 - [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS
 - [Docus Layer](https://www.npmjs.com/package/docus) - Documentation theme
 
+## 🔗 Related Packages
+
+- [`docus`](https://github.com/nuxtlabs/docus/tree/main/layer) - The Nuxt layer that powers your documentation
+
 ## 📖 Documentation
 
 For detailed documentation on customizing your Docus project, visit the [Docus Documentation](https://docus.dev)
@@ -96,23 +100,13 @@ git clone https://github.com/nuxtlabs/docus
 # Install dependencies
 pnpm install
 
+# Build the CLI
+pnpm run build
+
 # Run the dev server to run the docus docs
 pnpm run dev
 ```
 
-### Package Structure
-
-This is a monorepo containing:
-
-- [**`/cli`**](https://github.com/nuxtlabs/docus/tree/main/cli) - CLI tool (`create-docus`)
-- [**`/layer`**](https://github.com/nuxtlabs/docus/tree/main/layer) - Docus Nuxt layer (`docus`)
-- [**`/docs`**](https://github.com/nuxtlabs/docus/tree/main/docs) - Official documentation
-- [**`/.starters`**](https://github.com/nuxtlabs/docus/tree/main/.starters) - Starters project
-
 ## 📄 License
 
-Published under the [MIT](LICENSE) license.
-
----
-
-Docus has been entirely rewritten from scratch and is inspired from [undocs](https://github.com/unjs/undocs) made by [@pi0](https://github.com/pi0) 💚
+Published under the [MIT](https://github.com/nuxtlabs/docus/blob/main/LICENSE) license.
