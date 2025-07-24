@@ -7,5 +7,11 @@
   "npm": {
     "publish": true,
     "publishPath": "layer"
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "in": "./layer/package.json",
+      "out": "./layer/package.json"
+    }
   }
 } 

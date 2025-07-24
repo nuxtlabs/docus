@@ -2,9 +2,16 @@
   "git": false,
   "hooks": {
     "before:init": ["pnpm lint", "pnpm typecheck"],
-    "after:bump": "pnpm build"
+    "after:bump": "cd cli && pnpm build"
   },
   "npm": {
-    "publish": true
+    "publish": true,
+    "publishPath": "cli"
+  },
+  "plugins": {
+    "@release-it/bumper": {
+      "in": "./cli/package.json",
+      "out": "./cli/package.json"
+    }
   }
 } 
