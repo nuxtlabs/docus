@@ -4,7 +4,7 @@ import { useDocusI18n } from '~/composables/useDocusI18n'
 const appConfig = useAppConfig()
 const site = useSiteConfig()
 
-const { locale, locales, localePath, isEnabled, switchLocalePath } = useDocusI18n()
+const { localePath, isEnabled } = useDocusI18n()
 
 const links = computed(() => appConfig.github?.url
   ? [
@@ -33,6 +33,21 @@ const links = computed(() => appConfig.github?.url
     <template #right>
       <AppHeaderCTA />
 
+      <template v-if="isEnabled">
+        <ClientOnly>
+          <LanguageSelect />
+
+          <template #fallback>
+            <div class="h-8 w-8 animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded-md" />
+          </template>
+        </ClientOnly>
+
+        <USeparator
+          orientation="vertical"
+          class="h-8"
+        />
+      </template>
+
       <UContentSearchButton class="lg:hidden" />
 
       <ClientOnly>
@@ -50,19 +65,6 @@ const links = computed(() => appConfig.github?.url
           v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
         />
       </template>
-
-      <ClientOnly>
-        <ULocaleSelect
-          v-if="isEnabled"
-          v-model="locale"
-          :locales="locales"
-          @update:model-value="navigateTo(switchLocalePath($event as string) || localePath('/'))"
-        />
-
-        <template #fallback>
-          <div class="h-8 w-32 animate-pulse bg-neutral-200 dark:bg-neutral-800 rounded-md" />
-        </template>
-      </ClientOnly>
     </template>
 
     <template #toggle="{ open, toggle }">
