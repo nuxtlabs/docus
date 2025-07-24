@@ -55,8 +55,8 @@ jobs:
       - name: Publish Layer (docus)
         run: pnpx pkg-pr-new publish ./layer --compact --no-template --pnpm
 
-      - name: Build CLI (create-docus)
+      - name: Build CLI
         run: cd cli && pnpm run build
 
-      - name: Publish CLI Package
+      - name: Publish CLI (create-docus)
         run: pnpx pkg-pr-new publish ./cli --compact --no-template --pnpm
