@@ -37,3 +37,7 @@ template/pnpm-lock.yaml
 
 #VSC
 .history
+
+# Starters
+.starters/default/pnpm-lock.yaml
+.starters/default/pnpm-workspace.yaml

@@ -1,6 +1,5 @@
 import { defineNuxtModule } from '@nuxt/kit'
 import { defu } from 'defu'
-import type { Strategies } from '@nuxtjs/i18n'
 import { inferSiteURL, getPackageJsonMetadata } from '../utils/meta'
 import { getGitBranch, getGitEnv, getLocalGitInfo } from '../utils/git'
 
@@ -59,7 +58,7 @@ export default defineNuxtModule({
       // Override strategy to prefix
       nuxt.options.i18n = {
         ...nuxt.options.i18n,
-        strategy: 'prefix' as Strategies,
+        strategy: 'prefix',
       }
     }
   },
