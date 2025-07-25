@@ -50,7 +50,7 @@ Shipped with many features
   to: https://nuxt.com
   ---
   #title
-  Built with [Nuxt 3]{.text-primary}
+  Built with [Nuxt 4]{.text-primary}
   
   #description
   Optimized by the most famous Vue framework. Docus gives you everything you need to build fast, performant, and SEO-friendly websites.

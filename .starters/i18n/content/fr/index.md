@@ -41,7 +41,7 @@ Docus intègre le meilleur de l'écosystème Nuxt.
   to: https://nuxt.com
   ---
   #title
-  Construit avec [Nuxt 3]{.text-primary}
+  Construit avec [Nuxt 4]{.text-primary}
   
   #description
   Optimisé par votre meta framework Vue préféré. Docus vous donne tout ce dont vous avez besoin pour créer des sites rapides, performants et optimisés pour le SEO.
