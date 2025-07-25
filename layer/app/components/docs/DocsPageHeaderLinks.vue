@@ -7,7 +7,6 @@ const { copy, copied } = useClipboard()
 const { t } = useDocusI18n()
 
 const markdownLink = computed(() => `${window?.location?.origin}/raw${route.path}.md`)
-
 const items = [
   {
     label: 'Copy Markdown link',
@@ -41,6 +40,11 @@ const items = [
     to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${markdownLink.value} so I can ask questions about it.`)}`,
   },
 ]
+
+async function copyPage() {
+  const page = await $fetch<string>(`/raw${route.path}.md`)
+  copy(page)
+}
 </script>
 
 <template>
@@ -53,7 +57,7 @@ const items = [
       :ui="{
         leadingIcon: [copied ? 'text-primary' : 'text-neutral', 'size-3.5'],
       }"
-      @click="copy(markdownLink)"
+      @click="copyPage"
     />
 
     <UDropdownMenu
