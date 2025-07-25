@@ -15,12 +15,24 @@ export function createCLI(opts: CLIOptions) {
         required: false,
         default: 'docs',
       },
+      template: {
+        type: 'string',
+        alias: 't',
+        description: 'Template to use (default, i18n)',
+        required: false,
+        default: 'default',
+      },
     },
-    async setup({ args }) {
-      const dir = resolve(args.dir as string)
+    async setup(context) {
+      const dir = resolve(context.args.dir as string)
+      const template = context.args.template as 'i18n' | 'default'
+
+      if (!['i18n', 'default'].includes(template)) {
+        throw new Error('Invalid template')
+      }
 
       const { runCommand } = await import('nuxi')
-      await runCommand('init', [dir, '-t', 'gh:nuxtlabs/docus/.starters/default'])
+      await runCommand('init', [dir, '-t', `gh:nuxtlabs/docus/.starters/${template}`])
     },
   })
 
