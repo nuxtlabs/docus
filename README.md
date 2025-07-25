@@ -12,10 +12,10 @@ Create a new documentation project in seconds:
 
 ```bash
 # Create a new project
-npx create docus my-docs
+npx create-docus my-docs
 
 # Or create with i18n template for multi-language docs
-npx create docus my-docs -t i18n
+npx create-docus my-docs -t i18n
 
 # Navigate to your project
 cd my-docs
