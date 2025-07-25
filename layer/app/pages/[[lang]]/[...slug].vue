@@ -2,7 +2,7 @@
 import { kebabCase } from 'scule'
 import type { ContentNavigationItem, Collections, DocsCollectionItem } from '@nuxt/content'
 import { findPageHeadline } from '@nuxt/content/utils'
-import { addPrerenderPath } from '~/utils/prerender'
+import { addPrerenderPath } from '../../utils/prerender'
 
 definePageMeta({
   layout: 'docs',

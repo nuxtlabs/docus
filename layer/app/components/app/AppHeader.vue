@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useDocusI18n } from '~/composables/useDocusI18n'
+import { useDocusI18n } from '../../composables/useDocusI18n'
 
 const appConfig = useAppConfig()
 const site = useSiteConfig()
