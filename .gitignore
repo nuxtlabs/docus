@@ -41,3 +41,5 @@ template/pnpm-lock.yaml
 # Starters
 .starters/default/pnpm-lock.yaml
 .starters/default/pnpm-workspace.yaml
+.starters/i18n/pnpm-lock.yaml
+.starters/i18n/pnpm-workspace.yaml
