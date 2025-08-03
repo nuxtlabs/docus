@@ -105,7 +105,7 @@ Your project comes pre-configured with the best of the Nuxt ecosystem:
 - [Nuxt Image](https://image.nuxt.com/) - Optimized images
 - [Tailwind CSS 4](https://tailwindcss.com/) - Utility-first CSS
 - [Docus Layer](https://www.npmjs.com/package/docus) - Documentation theme
-- [Nuxt i18n](https://i18n.nuxt.com/) - Internationalization
+- [Nuxt i18n](https://i18n.nuxtjs.org/) - Internationalization
 
 ## 📖 Documentation
 
