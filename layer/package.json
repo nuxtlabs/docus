@@ -34,6 +34,7 @@
     "@nuxtjs/robots": "^5.4.0",
     "@vueuse/core": "^13.6.0",
     "defu": "^6.1.4",
+    "exsolve": "^1.0.7",
     "git-url-parse": "^16.1.0",
     "minimark": "^0.2.0",
     "motion-v": "^1.7.0",
