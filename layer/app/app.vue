@@ -1,27 +1,14 @@
 <script setup lang="ts">
 import type { PageCollections } from '@nuxt/content'
-import * as locales from '@nuxt/ui-pro/locale'
+import * as nuxtUiProLocales from '@nuxt/ui-pro/locale'
 
 const { seo } = useAppConfig()
 const site = useSiteConfig()
+const { locale, locales, isEnabled, switchLocalePath } = useDocusI18n()
 
-const { locale, isEnabled } = useDocusI18n()
-
-const lang = computed(() => locales[locale.value as keyof typeof locales]?.code || 'en')
-const dir = computed(() => locales[locale.value as keyof typeof locales]?.dir || 'ltr')
+const lang = computed(() => nuxtUiProLocales[locale.value as keyof typeof nuxtUiProLocales]?.code || 'en')
+const dir = computed(() => nuxtUiProLocales[locale.value as keyof typeof nuxtUiProLocales]?.dir || 'ltr')
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
-
-const { data: navigation } = await useAsyncData(`navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
-  transform: (data) => {
-    const rootResult = data.find(item => item.path === '/docs')?.children || data || []
-
-    return rootResult.find(item => item.path === `/${locale.value}`)?.children || rootResult
-  },
-  watch: [locale],
-})
-const { data: files } = useLazyAsyncData(`search_${collectionName.value}`, () => queryCollectionSearchSections(collectionName.value as keyof PageCollections), {
-  server: false,
-})
 
 useHead({
   meta: [
@@ -44,11 +31,32 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
+const route = useRoute()
+const defaultLocale = useRuntimeConfig().public.i18n.defaultLocale
+onMounted(() => {
+  const currentLocale = route.path.split('/')[1]
+  if (!locales.some(locale => locale.code === currentLocale)) {
+    return navigateTo(switchLocalePath(defaultLocale) as string)
+  }
+})
+
+const { data: navigation } = await useAsyncData(`navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
+  transform: (data) => {
+    const rootResult = data.find(item => item.path === '/docs')?.children || data || []
+
+    return rootResult.find(item => item.path === `/${locale.value}`)?.children || rootResult
+  },
+  watch: [locale],
+})
+const { data: files } = useLazyAsyncData(`search_${collectionName.value}`, () => queryCollectionSearchSections(collectionName.value as keyof PageCollections), {
+  server: false,
+})
+
 provide('navigation', navigation)
 </script>
 
 <template>
-  <UApp :locale="locales[locale as keyof typeof locales]">
+  <UApp :locale="nuxtUiProLocales[locale as keyof typeof nuxtUiProLocales]">
     <NuxtLoadingIndicator color="var(--ui-primary)" />
 
     <AppHeader />

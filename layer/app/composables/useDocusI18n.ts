@@ -1,3 +1,4 @@
+import type { LocaleObject } from '@nuxtjs/i18n'
 import en from '../../i18n/locales/en.json'
 
 export const useDocusI18n = () => {
@@ -8,7 +9,7 @@ export const useDocusI18n = () => {
     return {
       isEnabled,
       locale: ref('en'),
-      locales: ref([]),
+      locales: [],
       localePath: (path: string) => path,
       switchLocalePath: () => {},
       t: (key: string): string => {
@@ -18,12 +19,13 @@ export const useDocusI18n = () => {
     }
   }
 
-  const { locale, locales, t } = useI18n()
+  const { locale, t } = useI18n()
+  const filteredLocales = (config.docus as { filteredLocales: LocaleObject<string>[] })?.filteredLocales || []
 
   return {
     isEnabled,
     locale,
-    locales,
+    locales: filteredLocales,
     t,
     localePath: useLocalePath(),
     switchLocalePath: useSwitchLocalePath(),

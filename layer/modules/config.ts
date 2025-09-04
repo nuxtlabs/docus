@@ -73,31 +73,31 @@ export default defineNuxtModule({
         const hasContentFolder = existsSync(contentPath)
 
         if (!hasLocaleFile) {
-          console.warn(`Locale file not found: ${localeCode}.json - skipping locale "${localeCode}"`)
+          console.warn(`[Docus] Locale file not found: ${localeCode}.json - skipping locale "${localeCode}"`)
         }
 
         if (!hasContentFolder) {
-          console.warn(`Content folder not found: content/${localeCode}/ - skipping locale "${localeCode}"`)
+          console.warn(`[Docus] Content folder not found: content/${localeCode}/ - skipping locale "${localeCode}"`)
         }
 
         return hasLocaleFile && hasContentFolder
       })
 
-      console.log('filteredLocales', filteredLocales)
-
-      // Override strategy to prefix and update locales
+      // Override strategy to prefix
       nuxt.options.i18n = {
         ...nuxt.options.i18n,
         strategy: 'prefix',
-        locales: filteredLocales as LocaleObject<string>[],
       }
 
-      console.log('nuxt.options.i18n', nuxt.options.i18n)
+      // Expose filtered locales
+      nuxt.options.runtimeConfig.public.docus = {
+        filteredLocales,
+      }
 
       nuxt.hook('i18n:registerModule', (register) => {
         const langDir = resolve('../i18n/locales')
 
-        const locales = nuxt.options.i18n?.locales?.map((locale) => {
+        const locales = filteredLocales?.map((locale) => {
           return typeof locale === 'string'
             ? {
                 code: locale,
@@ -110,8 +110,6 @@ export default defineNuxtModule({
                 file: `${locale.code}.json`,
               }
         })
-
-        console.log('locales', locales)
 
         register({
           langDir,

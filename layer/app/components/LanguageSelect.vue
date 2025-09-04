@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const { locale, locales, switchLocalePath } = useDocusI18n()
 
-// console.log('locales', locales)
-
 function getEmojiFlag(locale: string): string {
   const languageToCountry: Record<string, string> = {
     ar: 'sa', // Arabic -> Saudi Arabia
