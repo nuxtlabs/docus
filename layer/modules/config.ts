@@ -4,7 +4,6 @@ import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { inferSiteURL, getPackageJsonMetadata } from '../utils/meta'
 import { getGitBranch, getGitEnv, getLocalGitInfo } from '../utils/git'
-import type { LocaleObject } from '@nuxtjs/i18n'
 
 export default defineNuxtModule({
   meta: {

@@ -4,7 +4,7 @@ import { useDocusI18n } from '../../composables/useDocusI18n'
 const appConfig = useAppConfig()
 const site = useSiteConfig()
 
-const { localePath, isEnabled } = useDocusI18n()
+const { localePath, isEnabled, locales } = useDocusI18n()
 
 const links = computed(() => appConfig.github?.url
   ? [
@@ -33,7 +33,7 @@ const links = computed(() => appConfig.github?.url
     <template #right>
       <AppHeaderCTA />
 
-      <template v-if="isEnabled">
+      <template v-if="isEnabled && locales.length > 1">
         <ClientOnly>
           <LanguageSelect />
 
