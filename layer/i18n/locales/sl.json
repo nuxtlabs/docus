@@ -1,6 +1,10 @@
 {
   "common": {
-    "or": "ali"
+    "or": "ali",
+    "error": {
+      "title": "Stran ni bila najdena",
+      "description": "Opravičujemo se, vendar stran, ki jo iščete, ni bila najdena."
+    }
   },
   "docs": {
     "copy": {

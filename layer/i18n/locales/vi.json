@@ -1,6 +1,10 @@
 {
   "common": {
-    "or": "hoặc"
+    "or": "hoặc",
+    "error": {
+      "title": "Không tìm thấy trang",
+      "description": "Chúng tôi xin lỗi, nhưng trang bạn đang tìm kiếm không tồn tại."
+    }
   },
   "docs": {
     "copy": {

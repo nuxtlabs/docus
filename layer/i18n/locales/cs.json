@@ -1,6 +1,10 @@
 {
   "common": {
-    "or": "nebo"
+    "or": "nebo",
+    "error": {
+      "title": "Stránka nenalezena",
+      "description": "Je nám líto, ale stránka, kterou hledáte, nebyla nalezena."
+    }
   },
   "docs": {
     "copy": {

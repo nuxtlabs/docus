@@ -1,6 +1,10 @@
 {
   "common": {
-    "or": "eller"
+    "or": "eller",
+    "error": {
+      "title": "Side ikke fundet",
+      "description": "Vi beklager, men siden du leder efter kunne ikke findes."
+    }
   },
   "docs": {
     "copy": {

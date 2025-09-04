@@ -1,6 +1,10 @@
 {
   "common": {
-    "or": "o"
+    "or": "o",
+    "error": {
+      "title": "Pàgina no trobada",
+      "description": "Ho sentim, però la pàgina que cerques no existeix."
+    }
   },
   "docs": {
     "copy": {

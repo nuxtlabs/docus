@@ -1,6 +1,10 @@
 {
   "common": {
-    "or": "või"
+    "or": "või",
+    "error": {
+      "title": "Lehekülge ei leitud",
+      "description": "Vabandame, kuid otsitavat lehekülge ei leitud."
+    }
   },
   "docs": {
     "copy": {

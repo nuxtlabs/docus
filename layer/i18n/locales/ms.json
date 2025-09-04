@@ -1,6 +1,10 @@
 {
   "common": {
-    "or": "atau"
+    "or": "atau",
+    "error": {
+      "title": "Halaman tidak dijumpai",
+      "description": "Kami mohon maaf, tetapi halaman yang anda cari tidak dapat dijumpai."
+    }
   },
   "docs": {
     "copy": {
