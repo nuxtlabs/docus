@@ -1,11 +1,22 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
 import type { PageCollections } from '@nuxt/content'
-import * as locales from '@nuxt/ui-pro/locale'
+import * as nuxtUiProLocales from '@nuxt/ui-pro/locale'
 
 const props = defineProps<{
   error: NuxtError
 }>()
+
+const { locale, locales, isEnabled, t, switchLocalePath } = useDocusI18n()
+
+const lang = computed(() => nuxtUiProLocales[locale.value as keyof typeof nuxtUiProLocales]?.code || 'en')
+const dir = computed(() => nuxtUiProLocales[locale.value as keyof typeof nuxtUiProLocales]?.dir || 'ltr')
+useHead({
+  htmlAttrs: {
+    lang,
+    dir,
+  },
+})
 
 const localizedError = computed(() => {
   return {
@@ -14,22 +25,19 @@ const localizedError = computed(() => {
   }
 })
 
-const lang = computed(() => locales[locale.value as keyof typeof locales]?.code || 'en')
-const dir = computed(() => locales[locale.value as keyof typeof locales]?.dir || 'ltr')
-
-useHead({
-  htmlAttrs: {
-    lang,
-    dir,
-  },
-})
-
 useSeoMeta({
   title: () => t('common.error.title'),
   description: () => t('common.error.description'),
 })
 
-const { locale, isEnabled, t } = useDocusI18n()
+const route = useRoute()
+const defaultLocale = useRuntimeConfig().public.i18n.defaultLocale
+onMounted(() => {
+  const currentLocale = route.path.split('/')[1]
+  if (!locales.some(locale => locale.code === currentLocale)) {
+    return navigateTo(switchLocalePath(defaultLocale) as string)
+  }
+})
 
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
