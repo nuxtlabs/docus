@@ -12,8 +12,8 @@ export default defineNuxtConfig({
       code: 'en',
       name: 'English',
     }, {
-      code: 'it',
-      name: 'Italiano',
+      code: 'fr',
+      name: 'Français',
     }],
   },
   llms: {
