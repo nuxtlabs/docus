@@ -20,8 +20,8 @@ Docus rassemble le meilleur de l'écosystème Nuxt en une seule CLI.
   size: xl
   to: /fr/getting-started/installation
   trailing-icon: i-lucide-arrow-right
+  label: Commencer
   ---
-  Commencer
   :::
 
   :::u-button
@@ -31,8 +31,8 @@ Docus rassemble le meilleur de l'écosystème Nuxt en une seule CLI.
   size: xl
   to: https://github.com/nuxt-ui-pro/docus
   variant: outline
+  label: Étoile sur GitHub
   ---
-  Étoile sur GitHub
   :::
 ::
 

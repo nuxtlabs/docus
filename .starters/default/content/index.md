@@ -22,8 +22,8 @@ Docus brings the best of the Nuxt ecosystem into one CLI.
   size: xl
   to: /getting-started/installation
   trailing-icon: i-lucide-arrow-right
+  label: Get started
   ---
-  Get started
   :::
 
   :::u-button
@@ -33,8 +33,8 @@ Docus brings the best of the Nuxt ecosystem into one CLI.
   size: xl
   to: https://github.com/nuxt-ui-pro/docus
   variant: outline
+  label: Star on GitHub
   ---
-  Star on GitHub
   :::
 ::
 
