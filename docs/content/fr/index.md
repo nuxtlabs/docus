@@ -20,8 +20,8 @@ Docus intègre le meilleur de l’écosystème Nuxt.
   size: xl
   to: /fr/getting-started/installation
   trailing-icon: i-lucide-arrow-right
+  label: Commencer
   ---
-  Commencer
   :::
 
   :::u-button
@@ -31,13 +31,18 @@ Docus intègre le meilleur de l’écosystème Nuxt.
   size: xl
   to: https://github.com/nuxtlabs/docus
   variant: outline
+  label: Étoile sur GitHub
   ---
-  Étoile sur GitHub
   :::
 
 #headline
-  :::u-button{size="sm" to="/fr/getting-started/migration" variant="outline"}
-  Docus v4 →
+  :::u-button
+  ---
+  size: sm
+  variant: outline
+  to: /fr/getting-started/migration
+  label: Docus v4 →
+  ---
   :::
 ::
 

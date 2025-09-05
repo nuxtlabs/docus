@@ -22,8 +22,8 @@ Docus brings the best of the Nuxt ecosystem.
   size: xl
   to: en/getting-started/installation
   trailing-icon: i-lucide-arrow-right
+  label: Get started
   ---
-  Get started
   :::
 
   :::u-button
@@ -33,13 +33,18 @@ Docus brings the best of the Nuxt ecosystem.
   size: xl
   to: https://github.com/nuxtlabs/docus
   variant: outline
+  label: Star on GitHub
   ---
-  Star on GitHub
   :::
 
 #headline
-  :::u-button{size="sm" to="/en/getting-started/migration" variant="outline"}
-  Docus v4 →
+  :::u-button
+  ---
+  size: sm
+  variant: outline
+  to: /en/getting-started/migration
+  label: Docus v4 →
+  ---
   :::
 ::
 
