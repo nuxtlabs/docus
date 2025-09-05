@@ -10,14 +10,14 @@ export default defineNuxtModule({
     const dir = nuxt.options.rootDir
 
     const contentDir = joinURL(dir, 'content')
-    const uiProPath = resolveModulePath('@nuxt/ui-pro', { from: import.meta.url, conditions: ['style'] })
+    const uiPath = resolveModulePath('@nuxt/ui', { from: import.meta.url, conditions: ['style'] })
     const tailwindPath = resolveModulePath('tailwindcss', { from: import.meta.url, conditions: ['style'] })
 
     const cssTemplate = addTemplate({
       filename: 'docus.css',
       getContents: () => {
         return `@import ${JSON.stringify(tailwindPath)};
-@import ${JSON.stringify(uiProPath)};
+@import ${JSON.stringify(uiPath)};
 
 @source "${contentDir.replace(/\\/g, '/')}/**/*";
 @source "../../app.config.ts";`

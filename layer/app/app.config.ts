@@ -4,8 +4,6 @@ export default defineAppConfig({
       primary: 'emerald',
       neutral: 'zinc',
     },
-  },
-  uiPro: {
     contentNavigation: {
       slots: {
         linkLeadingIcon: 'size-4 mr-1',
