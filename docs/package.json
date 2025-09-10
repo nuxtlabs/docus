@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "^10.0.3",
-    "@nuxtjs/plausible": "^1.2.0",
+    "@nuxtjs/plausible": "^2.0.0",
     "@nuxtjs/mdc": "^0.17.2",
     "@nuxt/ui-pro": "^3.3.0",
     "docus": "workspace:*",
