@@ -18,6 +18,6 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "nuxt": "^4.1.0"
+    "nuxt": "4.1.0"
   }
 }
