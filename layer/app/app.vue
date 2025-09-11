@@ -31,14 +31,16 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 
-const route = useRoute()
-const defaultLocale = useRuntimeConfig().public.i18n.defaultLocale
-onMounted(() => {
-  const currentLocale = route.path.split('/')[1]
-  if (!locales.some(locale => locale.code === currentLocale)) {
-    return navigateTo(switchLocalePath(defaultLocale) as string)
-  }
-})
+if (isEnabled.value) {
+  const route = useRoute()
+  const defaultLocale = useRuntimeConfig().public.i18n.defaultLocale
+  onMounted(() => {
+    const currentLocale = route.path.split('/')[1]
+    if (!locales.some(locale => locale.code === currentLocale)) {
+      return navigateTo(switchLocalePath(defaultLocale) as string)
+    }
+  })
+}
 
 const { data: navigation } = await useAsyncData(`navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
   transform: (data) => {

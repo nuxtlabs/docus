@@ -121,7 +121,7 @@ To contribute to the CLI tool:
 
 ```bash
 # Clone this repository
-git clone https://github.com/nuxtlabs/docus
+git clone https://github.com/nuxt-content/docus
 
 # Install dependencies
 pnpm install
@@ -134,10 +134,10 @@ pnpm run dev
 
 This is a monorepo containing:
 
-- [**`/cli`**](https://github.com/nuxtlabs/docus/tree/main/cli) - CLI tool (`create-docus`)
-- [**`/layer`**](https://github.com/nuxtlabs/docus/tree/main/layer) - Docus Nuxt layer (`docus`)
-- [**`/docs`**](https://github.com/nuxtlabs/docus/tree/main/docs) - Official documentation
-- [**`/.starters`**](https://github.com/nuxtlabs/docus/tree/main/.starters) - Starters project
+- [**`/cli`**](https://github.com/nuxt-content/docus/tree/main/cli) - CLI tool (`create-docus`)
+- [**`/layer`**](https://github.com/nuxt-content/docus/tree/main/layer) - Docus Nuxt layer (`docus`)
+- [**`/docs`**](https://github.com/nuxt-content/docus/tree/main/docs) - Official documentation
+- [**`/.starters`**](https://github.com/nuxt-content/docus/tree/main/.starters) - Starters project
 
 ## 📄 License
 

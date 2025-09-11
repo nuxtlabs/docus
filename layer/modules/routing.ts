@@ -9,10 +9,15 @@ export default defineNuxtModule({
 
     const isI18nEnabled = !!(nuxt.options.i18n && nuxt.options.i18n.locales)
 
-    // addImports({
-    //   name: 'useDocusI18n',
-    //   from: resolve('../app/composables/useDocusI18n'),
-    // })
+    // Ensure useDocusI18n is available in the app
+    nuxt.hook('imports:extend', (imports) => {
+      if (imports.some(i => i.name === 'useDocusI18n')) return
+
+      imports.push({
+        name: 'useDocusI18n',
+        from: resolve('../app/composables/useDocusI18n'),
+      })
+    })
 
     extendPages((pages) => {
       const landingTemplate = resolve('../app/templates/landing.vue')

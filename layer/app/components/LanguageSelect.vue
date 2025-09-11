@@ -58,13 +58,13 @@ function getEmojiFlag(locale: string): string {
     </UButton>
 
     <template #content>
-      <ul class="flex flex-col gap-2">
+      <ul class="flex flex-col">
         <li
           v-for="localeItem in locales"
           :key="localeItem.code"
         >
           <NuxtLink
-            class="flex justify-between py-2 px-1.5 gap-1 hover:bg-neutral-100 dark:hover:bg-neutral-800"
+            class="flex justify-between py-1.5 px-2 gap-1 hover:bg-neutral-100 dark:hover:bg-neutral-800"
             :to="switchLocalePath(localeItem.code) as string"
             :aria-label="localeItem.name"
           >

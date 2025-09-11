@@ -30,14 +30,16 @@ useSeoMeta({
   description: () => t('common.error.description'),
 })
 
-const route = useRoute()
-const defaultLocale = useRuntimeConfig().public.i18n.defaultLocale
-onMounted(() => {
-  const currentLocale = route.path.split('/')[1]
-  if (!locales.some(locale => locale.code === currentLocale)) {
-    return navigateTo(switchLocalePath(defaultLocale) as string)
-  }
-})
+if (isEnabled.value) {
+  const route = useRoute()
+  const defaultLocale = useRuntimeConfig().public.i18n.defaultLocale
+  onMounted(() => {
+    const currentLocale = route.path.split('/')[1]
+    if (!locales.some(locale => locale.code === currentLocale)) {
+      return navigateTo(switchLocalePath(defaultLocale) as string)
+    }
+  })
+}
 
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 

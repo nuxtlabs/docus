@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/docus.svg)](https://www.npmjs.com/package/docus)
 [![npm downloads](https://img.shields.io/npm/dm/docus.svg)](https://www.npmjs.com/package/docus)
 
-This is the official Nuxt layer for [Docus](https://docus.dev), providing a complete documentation theming. It works with the [Docus CLI](https://github.com/nuxtlabs/docus/tree/main/cli) for rapid project setup.
+This is the official Nuxt layer for [Docus](https://docus.dev), providing a complete documentation theming. It works with the [Docus CLI](https://github.com/nuxt-content/docus/tree/main/cli) for rapid project setup.
 
 ## 🚀 Features
 
@@ -108,8 +108,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📞 Support
 
 - 📖 [Documentation](https://docus.dev)
-- 🐛 [Issues](https://github.com/nuxtlabs/docus/issues)
-- 💬 [Discussions](https://github.com/nuxtlabs/docus/discussions)
+- 🐛 [Issues](https://github.com/nuxt-content/docus/issues)
+- 💬 [Discussions](https://github.com/nuxt-content/docus/discussions)
 
 ---
 

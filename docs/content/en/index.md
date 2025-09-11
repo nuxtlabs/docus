@@ -31,7 +31,7 @@ Docus brings the best of the Nuxt ecosystem.
   color: neutral
   icon: simple-icons-github
   size: xl
-  to: https://github.com/nuxtlabs/docus
+  to: https://github.com/nuxt-content/docus
   variant: outline
   ---
   Star on GitHub

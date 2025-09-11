@@ -6,7 +6,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/create-docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npm.chart.dev/create-docus)
 [![License](https://img.shields.io/npm/l/create-docus.svg?style=flat&colorA=020420&colorB=EEEEEE)](https://npmjs.com/package/create-docus)
 
-The fastest way to create a new [Docus](https://docus.dev) documentation project. This CLI tool scaffolds a complete documentation website using the [`docus`](https://www.github.com/nuxtlabs/docus/tree/main/layer) Nuxt layer.
+The fastest way to create a new [Docus](https://docus.dev) documentation project. This CLI tool scaffolds a complete documentation website using the [`docus`](https://www.github.com/nuxt-content/docus/tree/main/layer) Nuxt layer.
 
 ## 🚀 Quick Start
 
@@ -126,7 +126,7 @@ Your project comes pre-configured with the best of the Nuxt ecosystem:
 
 ## 🔗 Related Packages
 
-- [`docus`](https://github.com/nuxtlabs/docus/tree/main/layer) - The Nuxt layer that powers your documentation
+- [`docus`](https://github.com/nuxt-content/docus/tree/main/layer) - The Nuxt layer that powers your documentation
 
 ## 📖 Documentation
 
@@ -142,7 +142,7 @@ To contribute to the CLI tool:
 
 ```bash
 # Clone this repository
-git clone https://github.com/nuxtlabs/docus
+git clone https://github.com/nuxt-content/docus
 
 # Install dependencies
 pnpm install
@@ -156,4 +156,4 @@ pnpm run dev
 
 ## 📄 License
 
-Published under the [MIT](https://github.com/nuxtlabs/docus/blob/main/LICENSE) license.
+Published under the [MIT](https://github.com/nuxt-content/docus/blob/main/LICENSE) license.

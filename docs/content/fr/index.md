@@ -29,7 +29,7 @@ Docus intègre le meilleur de l’écosystème Nuxt.
   color: neutral
   icon: simple-icons-github
   size: xl
-  to: https://github.com/nuxtlabs/docus
+  to: https://github.com/nuxt-content/docus
   variant: outline
   ---
   Étoile sur GitHub

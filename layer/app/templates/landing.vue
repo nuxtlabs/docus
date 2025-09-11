@@ -12,8 +12,6 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-// Reconsider it once this is implemented: https://github.com/nuxt/content/issues/3419
-const prose = page.value.meta?.prose as boolean
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
 
@@ -42,6 +40,5 @@ else {
   <ContentRenderer
     v-if="page"
     :value="page"
-    :prose="prose || false"
   />
 </template>

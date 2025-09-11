@@ -33,6 +33,13 @@ export default defineNuxtConfig({
         highlight: {
           langs: ['bash', 'diff', 'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml'],
         },
+        remarkPlugins: {
+          'remark-mdc': {
+            options: {
+              autoUnwrap: true,
+            },
+          },
+        },
       },
     },
   },

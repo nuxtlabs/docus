@@ -32,7 +32,7 @@ export function createCLI(opts: CLIOptions) {
       }
 
       const { runCommand } = await import('nuxi')
-      await runCommand('init', [dir, '-t', `gh:nuxtlabs/docus/.starters/${template}`])
+      await runCommand('init', [dir, '-t', `gh:nuxt-content/docus/.starters/${template}`])
     },
   })
 
