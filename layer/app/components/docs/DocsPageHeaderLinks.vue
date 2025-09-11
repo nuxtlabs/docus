@@ -2,23 +2,17 @@
 import { useClipboard } from '@vueuse/core'
 
 const route = useRoute()
-const toast = useToast()
+
 const { copy, copied } = useClipboard()
 const { t } = useDocusI18n()
 
 const markdownLink = computed(() => `${window?.location?.origin}/raw${route.path}.md`)
 const items = [
   {
-    label: 'Copy Markdown link',
+    label: t('docs.copy.link'),
     icon: 'i-lucide-link',
     onSelect() {
       copy(markdownLink.value)
-
-      toast.add({
-        title: t('docs.copy.link'),
-        icon: 'i-lucide-check-circle',
-        color: 'success',
-      })
     },
   },
   {
@@ -51,11 +45,11 @@ async function copyPage() {
   <UButtonGroup size="sm">
     <UButton
       :label="t('docs.copy.page')"
-      :icon="copied ? 'i-lucide-copy-check' : 'i-lucide-copy'"
+      :icon="copied ? 'i-lucide-check' : 'i-lucide-copy'"
       color="neutral"
-      variant="outline"
+      variant="soft"
       :ui="{
-        leadingIcon: [copied ? 'text-primary' : 'text-neutral', 'size-3.5'],
+        leadingIcon: 'text-neutral size-3.5',
       }"
       @click="copyPage"
     />
@@ -68,14 +62,12 @@ async function copyPage() {
         side: 'bottom',
         sideOffset: 8,
       }"
-      :ui="{
-        content: 'w-48',
-      }"
     >
       <UButton
         icon="i-lucide-chevron-down"
         color="neutral"
-        variant="outline"
+        variant="soft"
+        class="border-l border-muted"
       />
     </UDropdownMenu>
   </UButtonGroup>

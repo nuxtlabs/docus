@@ -9,7 +9,7 @@
   "docs": {
     "copy": {
       "page": "Copier la page",
-      "link": "Copier la page Markdown",
+      "link": "Copier le lien Markdown",
       "view": "Voir en Markdown",
       "gpt": "Ouvrir dans ChatGPT",
       "claude": "Ouvrir dans Claude"

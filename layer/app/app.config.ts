@@ -4,19 +4,18 @@ export default defineAppConfig({
       primary: 'emerald',
       neutral: 'zinc',
     },
+    commandPalette: {
+      slots: {
+        input: '[&_.iconify]:size-4 [&_.iconify]:mx-0.5',
+        itemLeadingIcon: 'size-4 mx-0.5',
+      },
+    },
   },
   uiPro: {
     contentNavigation: {
       slots: {
         linkLeadingIcon: 'size-4 mr-1',
         linkTrailing: 'hidden',
-      },
-      variants: {
-        active: {
-          false: {
-            link: 'text-toned hover:after:bg-accented',
-          },
-        },
       },
       defaultVariants: {
         variant: 'link',
