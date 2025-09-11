@@ -63,13 +63,9 @@ provide('navigation', navigation)
 
     <AppHeader />
 
-    <UMain>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </UMain>
-
-    <AppFooter />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
 
     <ClientOnly>
       <LazyUContentSearch
