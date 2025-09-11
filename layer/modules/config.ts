@@ -49,10 +49,6 @@ export default defineNuxtModule({
       branch: getGitBranch(),
     })
 
-    nuxt.options.appConfig.toc = defu(nuxt.options.appConfig.toc, {
-      title: 'On this page',
-    })
-
     /*
     ** I18N
     */

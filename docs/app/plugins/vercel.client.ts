@@ -2,6 +2,8 @@ import { inject, pageview } from '@vercel/analytics'
 import { injectSpeedInsights } from '@vercel/speed-insights'
 
 export default defineNuxtPlugin(() => {
+  if (import.meta.dev) return
+
   const nuxtApp = useNuxtApp()
   const route = useRoute()
   const speedInsights = injectSpeedInsights({

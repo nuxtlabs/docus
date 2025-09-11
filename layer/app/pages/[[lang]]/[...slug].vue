@@ -45,7 +45,11 @@ useSeoMeta({
   ogDescription: description,
 })
 
-const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
+const headline = ref(findPageHeadline(navigation?.value, page.value?.path))
+watch(() => navigation?.value, () => {
+  headline.value = findPageHeadline(navigation?.value, page.value?.path) || headline.value
+})
+
 defineOgImageComponent('Docs', {
   headline: headline.value,
 })

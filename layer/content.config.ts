@@ -36,7 +36,7 @@ if (locales && Array.isArray(locales)) {
       type: 'page',
       source: {
         cwd,
-        include: `${code}/**/*.md`,
+        include: `${code}/**/*`,
         prefix: `/${code}`,
         exclude: [`${code}/index.md`],
       },
