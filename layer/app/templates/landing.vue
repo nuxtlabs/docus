@@ -4,6 +4,10 @@ import type { Collections } from '@nuxt/content'
 const route = useRoute()
 const { locale, isEnabled } = useDocusI18n()
 
+definePageMeta({
+  layout: 'landing',
+})
+
 // Dynamic collection name based on i18n status
 const collectionName = computed(() => isEnabled.value ? `landing_${locale.value}` : 'landing')
 
@@ -33,6 +37,11 @@ else {
     title,
     description,
   })
+}
+
+// Allow frontmatter to override layout (e.g., `layout: custom`)
+if (page.value?.layout) {
+  setPageLayout(page.value.layout as never)
 }
 </script>
 
