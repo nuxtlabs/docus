@@ -29,7 +29,7 @@ Docus rassemble le meilleur de l'écosystème Nuxt en une seule CLI.
   color: neutral
   icon: simple-icons-github
   size: xl
-  to: https://github.com/nuxt-ui-pro/docus
+  to: https://github.com/nuxt-content/docus
   variant: outline
   ---
   Étoile sur GitHub
