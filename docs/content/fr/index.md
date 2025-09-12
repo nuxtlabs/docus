@@ -9,8 +9,7 @@ seo:
 Créez votre documentation en Markdown
 
 #description
-Publiez instantanément une documentation élégante, optimisée pour le SEO, avec design déjà pensé.
-
+Publiez instantanément une documentation élégante, optimisée pour le SEO, avec design déjà pensé. :br
 Docus intègre le meilleur de l’écosystème Nuxt.
 
 #links

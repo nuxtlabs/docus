@@ -1,5 +1,11 @@
 # Changelog
 
+## [4.1.4](https://github.com/nuxt-content/docus/compare/v4.1.3...v4.1.4) (2025-09-11)
+
+### Bug Fixes
+
+* reactive navigation in production ([b073f01](https://github.com/nuxt-content/docus/commit/b073f010e6eb01d63d333349f0175a6a8c2ec8d4))
+
 ## [4.1.3](https://github.com/nuxt-content/docus/compare/v4.1.2...v4.1.3) (2025-09-08)
 
 ### Bug Fixes

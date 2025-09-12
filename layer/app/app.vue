@@ -42,7 +42,7 @@ if (isEnabled.value) {
   })
 }
 
-const { data: navigation } = await useAsyncData(`navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
+const { data: navigation } = await useAsyncData(() => `navigation_${collectionName.value}`, () => queryCollectionNavigation(collectionName.value as keyof PageCollections), {
   transform: (data) => {
     const rootResult = data.find(item => item.path === '/docs')?.children || data || []
 
