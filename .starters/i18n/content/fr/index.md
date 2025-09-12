@@ -61,10 +61,10 @@ Livré avec de nombreuses fonctionnalités
   to: https://ui.nuxt.com/
   ---
   #title
-  Propulsé par [Nuxt UI Pro]{.text-primary}
+  Désigné par [Nuxt UI]{.text-primary}
   
   #description
-  Sexy, minimaliste et personnalisable. Docus intègre Nuxt UI Pro pour vous offrir la meilleure expérience pour écrire une documentation sans boilerplate, concentrez-vous simplement sur votre contenu.
+  Sexy, minimaliste et personnalisable. Docus intègre Nuxt UI pour vous offrir la meilleure expérience pour écrire une documentation sans boilerplate, concentrez-vous simplement sur votre contenu.
   :::
 
   :::u-page-feature
