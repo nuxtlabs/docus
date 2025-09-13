@@ -2,10 +2,11 @@
 import { kebabCase } from 'scule'
 import type { ContentNavigationItem, Collections, DocsCollectionItem } from '@nuxt/content'
 import { findPageHeadline } from '@nuxt/content/utils'
+import type { PageMeta } from '#app'
 import { addPrerenderPath } from '../../utils/prerender'
 
 definePageMeta({
-  layout: 'docs',
+  layout: false,
 })
 
 const route = useRoute()
@@ -26,10 +27,6 @@ const [{ data: page }, { data: surround }] = await Promise.all([
 
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
-}
-
-if (page.value.layout) {
-  setPageLayout(page.value.layout as never)
 }
 
 // Add the page path to the prerender list
@@ -68,80 +65,88 @@ const editLink = computed(() => {
     `${page.value?.stem}.${page.value?.extension}`,
   ].filter(Boolean).join('/')
 })
+
+const layoutProps = computed(
+  () => !(page.value as { layout?: PageMeta['layout'] })?.layout
+    ? { name: 'docus' as PageMeta['layout'], isLanding: false }
+    : { name: (page.value as { layout?: PageMeta['layout'] })?.layout },
+)
 </script>
 
 <template>
-  <UPage v-if="page">
-    <UPageHeader
-      :title="page.title"
-      :description="page.description"
-      :headline="headline"
-      :ui="{
-        wrapper: 'flex-row items-center flex-wrap justify-between',
-      }"
-    >
-      <template #links>
-        <UButton
-          v-for="(link, index) in (page as DocsCollectionItem).links"
-          :key="index"
-          size="sm"
-          v-bind="link"
+  <NuxtLayout v-bind="layoutProps">
+    <UPage v-if="page">
+      <UPageHeader
+        :title="page.title"
+        :description="page.description"
+        :headline="headline"
+        :ui="{
+          wrapper: 'flex-row items-center flex-wrap justify-between',
+        }"
+      >
+        <template #links>
+          <UButton
+            v-for="(link, index) in (page as DocsCollectionItem).links"
+            :key="index"
+            size="sm"
+            v-bind="link"
+          />
+
+          <DocsPageHeaderLinks />
+        </template>
+      </UPageHeader>
+
+      <UPageBody>
+        <ContentRenderer
+          v-if="page"
+          :value="page"
         />
 
-        <DocsPageHeaderLinks />
-      </template>
-    </UPageHeader>
-
-    <UPageBody>
-      <ContentRenderer
-        v-if="page"
-        :value="page"
-      />
-
-      <USeparator>
-        <div
-          v-if="editLink"
-          class="flex items-center gap-2 text-sm text-muted"
-        >
-          <UButton
-            variant="link"
-            color="neutral"
-            :to="editLink"
-            target="_blank"
-            icon="i-lucide-pen"
-            :ui="{ leadingIcon: 'size-4' }"
+        <USeparator>
+          <div
+            v-if="editLink"
+            class="flex items-center gap-2 text-sm text-muted"
           >
-            {{ t('docs.edit') }}
-          </UButton>
-          <span>{{ t('common.or') }}</span>
-          <UButton
-            variant="link"
-            color="neutral"
-            :to="`${appConfig.github.url}/issues/new/choose`"
-            target="_blank"
-            icon="i-lucide-alert-circle"
-            :ui="{ leadingIcon: 'size-4' }"
-          >
-            {{ t('docs.report') }}
-          </UButton>
-        </div>
-      </USeparator>
-      <UContentSurround :surround="surround" />
-    </UPageBody>
+            <UButton
+              variant="link"
+              color="neutral"
+              :to="editLink"
+              target="_blank"
+              icon="i-lucide-pen"
+              :ui="{ leadingIcon: 'size-4' }"
+            >
+              {{ t('docs.edit') }}
+            </UButton>
+            <span>{{ t('common.or') }}</span>
+            <UButton
+              variant="link"
+              color="neutral"
+              :to="`${appConfig.github.url}/issues/new/choose`"
+              target="_blank"
+              icon="i-lucide-alert-circle"
+              :ui="{ leadingIcon: 'size-4' }"
+            >
+              {{ t('docs.report') }}
+            </UButton>
+          </div>
+        </USeparator>
+        <UContentSurround :surround="surround" />
+      </UPageBody>
 
-    <template
-      v-if="page?.body?.toc?.links?.length"
-      #right
-    >
-      <UContentToc
-        highlight
-        :title="appConfig.toc?.title || t('docs.toc')"
-        :links="page.body?.toc?.links"
+      <template
+        v-if="page?.body?.toc?.links?.length"
+        #right
       >
-        <template #bottom>
-          <DocsAsideRightBottom />
-        </template>
-      </UContentToc>
-    </template>
-  </UPage>
+        <UContentToc
+          highlight
+          :title="appConfig.toc?.title || t('docs.toc')"
+          :links="page.body?.toc?.links"
+        >
+          <template #bottom>
+            <DocsAsideRightBottom />
+          </template>
+        </UContentToc>
+      </template>
+    </UPage>
+  </NuxtLayout>
 </template>

@@ -1,21 +1,15 @@
 <template>
-  <AppHeader />
+  <UContainer>
+    <UPage>
+      <template #left>
+        <UPageAside>
+          <DocsAsideLeftTop />
 
-  <UMain>
-    <UContainer>
-      <UPage>
-        <template #left>
-          <UPageAside>
-            <DocsAsideLeftTop />
+          <DocsAsideLeftBody />
+        </UPageAside>
+      </template>
 
-            <DocsAsideLeftBody />
-          </UPageAside>
-        </template>
-
-        <slot />
-      </UPage>
-    </UContainer>
-  </UMain>
-
-  <AppFooter />
+      <slot />
+    </UPage>
+  </UContainer>
 </template>

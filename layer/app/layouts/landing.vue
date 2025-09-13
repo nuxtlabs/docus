@@ -1,12 +1,5 @@
 <template>
-  <AppHeader />
-
-  <UMain>
-    <UContainer>
-      <slot />
-    </UContainer>
-  </UMain>
-
-  <AppFooter />
+  <UContainer>
+    <slot />
+  </UContainer>
 </template>
-
