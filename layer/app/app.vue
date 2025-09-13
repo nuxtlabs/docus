@@ -61,15 +61,9 @@ provide('navigation', navigation)
   <UApp :locale="nuxtUiProLocales[locale as keyof typeof nuxtUiProLocales]">
     <NuxtLoadingIndicator color="var(--ui-primary)" />
 
-    <AppHeader />
-
-    <UMain>
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
-    </UMain>
-
-    <AppFooter />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
 
     <ClientOnly>
       <LazyUContentSearch

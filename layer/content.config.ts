@@ -7,6 +7,9 @@ const { options } = useNuxt()
 const cwd = joinURL(options.rootDir, 'content')
 const locales = options.i18n?.locales
 
+const createLandingSchema = () => z.object({
+  layout: z.string().optional(),
+})
 const createDocsSchema = () => z.object({
   layout: z.string().optional(),
   links: z.array(z.object({
@@ -30,6 +33,7 @@ if (locales && Array.isArray(locales)) {
         cwd,
         include: `${code}/index.md`,
       },
+      schema: createLandingSchema(),
     })
 
     collections[`docs_${code}`] = defineCollection({
@@ -52,6 +56,7 @@ else {
         cwd,
         include: 'index.md',
       },
+      schema: createLandingSchema(),
     }),
     docs: defineCollection({
       type: 'page',

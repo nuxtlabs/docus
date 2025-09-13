@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import type { PageMeta } from '#app'
 import type { Collections } from '@nuxt/content'
 
 const route = useRoute()
 const { locale, isEnabled } = useDocusI18n()
+
+definePageMeta({
+  layout: false,
+})
 
 // Dynamic collection name based on i18n status
 const collectionName = computed(() => isEnabled.value ? `landing_${locale.value}` : 'landing')
@@ -34,11 +39,19 @@ else {
     description,
   })
 }
+
+const layoutProps = computed(
+  () => !(page.value as { layout?: PageMeta['layout'] })?.layout
+    ? { name: 'docus' as PageMeta['layout'], isLanding: true }
+    : { name: (page.value as { layout?: PageMeta['layout'] })?.layout },
+)
 </script>
 
 <template>
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-  />
+  <NuxtLayout v-bind="layoutProps">
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+    />
+  </NuxtLayout>
 </template>
